@@ -90,7 +90,7 @@ void print_array(long double *sample, int size){
 long double monte_carlo_integrate(long double (*f)(long double), long double *samples, int size){
     // Your sequential code goes here
     printf("Not implemented yet\n");
-    exit(-1);
+    //exit(-1);
     return 0.0L;
 }
 
@@ -101,15 +101,15 @@ void *monte_carlo_integrate_thread(void *args){
 
 int main(int argc, char **argv){
     if(argc != 4){
-        printf(usage_message);
+        printf("%s", usage_message); // erro
         exit(-1);
     } else if(atoi(argv[2]) >= FUNCTIONS || atoi(argv[2]) < 0){
         printf("Error: FUNCTION_ID must in [0,%d]\n", FUNCTIONS - 1);
-        printf(usage_message);
+        printf("%s", usage_message); // erro
         exit(-1);
     } else if(atoi(argv[3]) < 0){
         printf("Error: I need at least 1 thread\n");
-        printf(usage_message);
+        printf("%s", usage_message); // erro
         exit(-1);
     }
 
@@ -139,7 +139,9 @@ int main(int argc, char **argv){
         timer.c_start = clock();
         clock_gettime(CLOCK_MONOTONIC, &timer.t_start);
         gettimeofday(&timer.v_start, NULL);
-
+        
+        printf("teste\n\n");
+        
         estimate = monte_carlo_integrate(target_function.f,
                                          uniform_sample(target_function.interval,
                                                         samples,
