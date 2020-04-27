@@ -47,9 +47,18 @@ struct function functions[] = {
 // Your thread data structures go here
 
 struct thread_data{
+    long double (*f)(long double);
+    long double *samples;
+    int size;
+    int chunk_size;
+    int current_index;
+    long double sum;
+    pthread_mutex_t mutex_index;
+    pthread_mutex_t mutex_sum;
 };
 
-struct thread_data *thread_data_array;
+typedef struct thread_data thread_data_array;
+#define THREAD_DATA_ARRAY_INITIALIZER(func, samples, size) { func, samples, size, 500, 0, 0, PTHREAD_MUTEX_INITIALIZER, PTHREAD_MUTEX_INITIALIZER }
 
 // End of data structures
 
@@ -89,13 +98,44 @@ void print_array(long double *sample, int size){
 
 long double monte_carlo_integrate(long double (*f)(long double), long double *samples, int size){
     // Your sequential code goes here
-    printf("Not implemented yet\n");
-    //exit(-1);
-    return 0.0L;
+    long double accum = 0.0;
+    for(int i = 0 ; i < size; i++)
+    {
+        accum += (*f)(samples[i]);
+    }
+    return accum / (long double) size;
 }
 
 void *monte_carlo_integrate_thread(void *args){
     // Your pthreads code goes here
+    thread_data_array *data = (thread_data_array *) args;
+    int from_index;
+    int to_index;
+    long double accum_chunk;
+    while(1)
+    {
+        // atomic sample retrieve
+        pthread_mutex_lock(&(data->mutex_index));
+        from_index = data->current_index;
+        to_index = from_index + data->chunk_size;
+        to_index = to_index > data->size ? data->size : to_index;
+        data->current_index = to_index;
+        pthread_mutex_unlock(&(data->mutex_index));
+        
+        // job done
+        if(from_index >= data->size)
+            break;
+        
+        // calculate chunk result
+        accum_chunk = 0.0;
+        for(int i = from_index; i < to_index; i++)
+            accum_chunk += (*data->f)(data->samples[i]);
+  
+        // atomic sum aggregation
+        pthread_mutex_lock(&(data->mutex_sum));
+        data->sum += accum_chunk;
+        pthread_mutex_unlock(&(data->mutex_sum));
+    }
     pthread_exit(NULL);
 }
 
@@ -139,15 +179,12 @@ int main(int argc, char **argv){
         timer.c_start = clock();
         clock_gettime(CLOCK_MONOTONIC, &timer.t_start);
         gettimeofday(&timer.v_start, NULL);
-        
-        printf("teste\n\n");
-        
         estimate = monte_carlo_integrate(target_function.f,
                                          uniform_sample(target_function.interval,
                                                         samples,
                                                         size),
                                          size);
-
+        
         timer.c_end = clock();
         clock_gettime(CLOCK_MONOTONIC, &timer.t_end);
         gettimeofday(&timer.v_end, NULL);
@@ -161,10 +198,22 @@ int main(int argc, char **argv){
         gettimeofday(&timer.v_start, NULL);
 
         // Your pthreads code goes here
-
-        printf("Not implemented yet\n");
-        exit(-1);
-
+        thread_data_array data_array = THREAD_DATA_ARRAY_INITIALIZER(target_function.f,
+                                                                     uniform_sample(target_function.interval, 
+                                                                                    samples, 
+                                                                                    size),
+                                                                     size);
+        int i;
+        pthread_t thread_pool[n_threads];
+        for (i = 0; i < sizeof(thread_pool) / sizeof(thread_pool[0]); ++i)
+        {
+            pthread_create(&thread_pool[i], NULL, monte_carlo_integrate_thread, &data_array);
+        }
+        for (i = 0; i < sizeof(thread_pool) / sizeof(thread_pool[0]); ++i)
+        {
+            pthread_join(thread_pool[i], NULL);
+        }
+        estimate = data_array.sum / (long double) data_array.size;
         // Your pthreads code ends here
 
         timer.c_end = clock();
