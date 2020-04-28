@@ -58,7 +58,7 @@ struct thread_data{
 };
 
 typedef struct thread_data thread_data_array;
-#define THREAD_DATA_ARRAY_INITIALIZER(func, samples, size) { func, samples, size, 500, 0, 0, PTHREAD_MUTEX_INITIALIZER, PTHREAD_MUTEX_INITIALIZER }
+#define THREAD_DATA_ARRAY_INITIALIZER(func, samples, size) { func, samples, size, 1000, 0, 0, PTHREAD_MUTEX_INITIALIZER, PTHREAD_MUTEX_INITIALIZER }
 
 // End of data structures
 
