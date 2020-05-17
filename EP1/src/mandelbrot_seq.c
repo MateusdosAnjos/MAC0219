@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <time.h>
 
 double c_x_min;
 double c_x_max;
@@ -94,7 +95,7 @@ void update_rgb_buffer(int iteration, int x, int y){
 
 void write_to_file(){
     FILE * file;
-    char * filename               = "output.ppm";
+    char * filename               = "output_seq.ppm";
     char * comment                = "# ";
 
     int max_color_component_value = 255;
@@ -124,6 +125,10 @@ void compute_mandelbrot(){
 
     double c_x;
     double c_y;
+    clock_t start, end;
+    double cpu_time_used;
+    
+    start = clock();
 
     for(i_y = 0; i_y < i_y_max; i_y++){
         c_y = c_y_min + i_y * pixel_height;
@@ -155,6 +160,11 @@ void compute_mandelbrot(){
             update_rgb_buffer(iteration, i_x, i_y);
         };
     };
+
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("tempo gasto %f\n", cpu_time_used);
+    
 };
 
 int main(int argc, char *argv[]){

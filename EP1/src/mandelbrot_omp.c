@@ -1,6 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <omp.h>
+#include <time.h>
+#include <sys/time.h>
+#define N           4
+#define CHUNK       50
+struct timer_info {
+    clock_t c_start;
+    clock_t c_end;
+    struct timespec t_start;
+    struct timespec t_end;
+    struct timeval v_start;
+    struct timeval v_end;
+};
+
+struct timer_info timer;
 
 double c_x_min;
 double c_x_max;
@@ -94,7 +109,7 @@ void update_rgb_buffer(int iteration, int x, int y){
 
 void write_to_file(){
     FILE * file;
-    char * filename               = "output.ppm";
+    char * filename               = "output_omp.ppm";
     char * comment                = "# ";
 
     int max_color_component_value = 255;
@@ -124,7 +139,15 @@ void compute_mandelbrot(){
 
     double c_x;
     double c_y;
+    clock_t start, end;
+    double cpu_time_used;
 
+    start = clock();
+    #pragma omp parallel    for \
+                            schedule(static) \
+                            private(i_x, i_y, iteration, c_x, c_y, z_x, z_y, z_x_squared, z_y_squared) \
+                            shared(i_y_max, pixel_height, pixel_width, c_x_min, i_x_max, iteration_max, escape_radius_squared) \
+                            num_threads(N)
     for(i_y = 0; i_y < i_y_max; i_y++){
         c_y = c_y_min + i_y * pixel_height;
 
@@ -155,6 +178,10 @@ void compute_mandelbrot(){
             update_rgb_buffer(iteration, i_x, i_y);
         };
     };
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("tempo gasto %f\n", cpu_time_used);
+    
 };
 
 int main(int argc, char *argv[]){
