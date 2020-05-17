@@ -4,18 +4,6 @@
 #include <omp.h>
 #include <time.h>
 #include <sys/time.h>
-#define N           4
-#define CHUNK       50
-struct timer_info {
-    clock_t c_start;
-    clock_t c_end;
-    struct timespec t_start;
-    struct timespec t_end;
-    struct timeval v_start;
-    struct timeval v_end;
-};
-
-struct timer_info timer;
 
 double c_x_min;
 double c_x_max;
@@ -26,6 +14,7 @@ double pixel_width;
 double pixel_height;
 
 int iteration_max = 200;
+int n_threads = 4;
 
 int image_size;
 unsigned char **image_buffer;
@@ -65,8 +54,8 @@ void allocate_image_buffer(){
 };
 
 void init(int argc, char *argv[]){
-    if(argc < 6){
-        printf("usage: ./mandelbrot_omp c_x_min c_x_max c_y_min c_y_max image_size\n");
+    if(argc < 7){
+        printf("usage: ./mandelbrot_omp c_x_min c_x_max c_y_min c_y_max image_size n_threads\n");
         printf("examples with image_size = 11500:\n");
         printf("    Full Picture:         ./mandelbrot_omp -2.5 1.5 -2.0 2.0 11500\n");
         printf("    Seahorse Valley:      ./mandelbrot_omp -0.8 -0.7 0.05 0.15 11500\n");
@@ -80,6 +69,7 @@ void init(int argc, char *argv[]){
         sscanf(argv[3], "%lf", &c_y_min);
         sscanf(argv[4], "%lf", &c_y_max);
         sscanf(argv[5], "%d", &image_size);
+        sscanf(argv[6], "%d", &n_threads);
 
         i_x_max           = image_size;
         i_y_max           = image_size;
@@ -143,11 +133,12 @@ void compute_mandelbrot(){
     double cpu_time_used;
 
     start = clock();
-    #pragma omp parallel    for \
-                            schedule(static) \
+
+    #pragma omp parallel num_threads(n_threads) \
                             private(i_x, i_y, iteration, c_x, c_y, z_x, z_y, z_x_squared, z_y_squared) \
-                            shared(i_y_max, pixel_height, pixel_width, c_x_min, i_x_max, iteration_max, escape_radius_squared) \
-                            num_threads(N)
+                            shared(i_y_max, pixel_height, pixel_width, c_x_min, i_x_max, iteration_max, escape_radius_squared)
+    #pragma omp for \
+                    schedule(dynamic)
     for(i_y = 0; i_y < i_y_max; i_y++){
         c_y = c_y_min + i_y * pixel_height;
 
@@ -181,7 +172,7 @@ void compute_mandelbrot(){
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
     printf("tempo gasto %f\n", cpu_time_used);
-    
+
 };
 
 int main(int argc, char *argv[]){
