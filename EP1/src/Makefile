@@ -20,6 +20,9 @@ $(OUTPUT)_pth: $(OUTPUT)_pth.c
 $(OUTPUT)_seq: $(OUTPUT)_seq.c
 	$(CC) -o $(OUTPUT)_seq $(CC_OPT) $(OUTPUT)_seq.c
 
+$(OUTPUT)_seq_noio: $(OUTPUT)_seq_noio.c
+	$(CC) -o $(OUTPUT)_seq_noio $(CC_OPT) $(OUTPUT)_seq_noio.c
+
 .PHONY: clean
 clean:
-	rm $(OUTPUT)_omp $(OUTPUT)_pth $(OUTPUT)_seq *$(IMAGE)
+	rm $(OUTPUT)_omp $(OUTPUT)_pth $(OUTPUT)_seq $(OUTPUT)_seq_noio *$(IMAGE)
