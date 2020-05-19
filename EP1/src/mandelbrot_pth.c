@@ -1,7 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <pthread.h>
 
+// thread
+struct thread_data{
+    int chunk_size;
+    int current_index;
+    pthread_mutex_t mutex_index;
+    pthread_mutex_t mutex_atomic;
+};
+
+typedef struct thread_data thread_data_array;
+#define THREAD_DATA_ARRAY_INITIALIZER() { 32, 0, PTHREAD_MUTEX_INITIALIZER, PTHREAD_MUTEX_INITIALIZER }
+
+// mandelbrot
 double c_x_min;
 double c_x_max;
 double c_y_min;
@@ -160,7 +173,85 @@ void compute_mandelbrot(){
 };
 
 void *compute_mandelbrot_thread(void *args){
-    return 0;
+    // thread data
+    thread_data_array *data = (thread_data_array *) args;
+    int from_index;
+    int to_index;
+    int chunk_start_x;
+    int chunk_start_y;
+
+    // mandelbrot data
+    double z_x;
+    double z_y;
+    double z_x_squared;
+    double z_y_squared;
+    double escape_radius_squared = 4;
+    int iteration;
+    int i_x;
+    int i_y;
+    double c_x;
+    double c_y;
+
+    while(1)
+    {
+       // atomic chunk retrieval
+        pthread_mutex_lock(&(data->mutex_index));
+        from_index = data->current_index;
+        to_index = from_index + data->chunk_size;
+        to_index = to_index > image_buffer_size ? image_buffer_size : to_index;
+        data->current_index = to_index;
+        pthread_mutex_unlock(&(data->mutex_index));
+
+        // job done
+        if(from_index >= image_buffer_size)
+            break;
+
+        chunk_start_y = from_index/i_x_max;
+        chunk_start_x = from_index%i_x_max;
+
+        for(i_y = chunk_start_y; i_y < i_y_max; i_y++){
+            c_y = c_y_min + i_y * pixel_height;
+
+            if(fabs(c_y) < pixel_height / 2){
+                c_y = 0.0;
+            };
+
+            int start_x = i_y == chunk_start_y ? chunk_start_x : 0;
+            for(i_x = start_x; i_x < i_x_max; i_x++){
+                // chunk end?
+                if((i_y_max * i_y) + i_x >= to_index)
+                    break;
+
+                c_x         = c_x_min + i_x * pixel_width;
+
+                z_x         = 0.0;
+                z_y         = 0.0;
+
+                z_x_squared = 0.0;
+                z_y_squared = 0.0;
+
+                for(iteration = 0;
+                    iteration < iteration_max &&                        \
+                    ((z_x_squared + z_y_squared) < escape_radius_squared);
+                    iteration++){
+                    z_y         = 2 * z_x * z_y + c_y;
+                    z_x         = z_x_squared - z_y_squared + c_x;
+
+                    z_x_squared = z_x * z_x;
+                    z_y_squared = z_y * z_y;
+                };
+
+                //atomic update
+                pthread_mutex_lock(&(data->mutex_atomic));
+                update_rgb_buffer(iteration, i_x, i_y);
+                pthread_mutex_unlock(&(data->mutex_atomic));
+            };
+            // chunk end?
+            if((i_y_max * i_y) + i_x >= to_index)
+                break;
+        };
+    }
+    pthread_exit(NULL);
 }
 
 int main(int argc, char *argv[]){
@@ -171,7 +262,18 @@ int main(int argc, char *argv[]){
     if(n_threads == 1){
         compute_mandelbrot();
     } else {
-        printf("PASS\n");
+        thread_data_array data_array = THREAD_DATA_ARRAY_INITIALIZER();
+
+        int i;
+        pthread_t thread_pool[n_threads];
+        for (i = 0; i < sizeof(thread_pool) / sizeof(thread_pool[0]); ++i)
+        {
+            pthread_create(&thread_pool[i], NULL, compute_mandelbrot_thread, &data_array);
+        }
+        for (i = 0; i < sizeof(thread_pool) / sizeof(thread_pool[0]); ++i)
+        {
+            pthread_join(thread_pool[i], NULL);
+        }
     }
 
     write_to_file();
