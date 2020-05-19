@@ -1,3 +1,4 @@
+*.DS_Store
 EP1/.DS_Store
 EP1/src/mandelbrot_pth
 EP1/src/mandelbrot_pth_noio
