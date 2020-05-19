@@ -1,0 +1,8 @@
+EP1/.DS_Store
+EP1/src/mandelbrot_pth
+EP1/src/mandelbrot_pth_noio
+EP1/src/mandelbrot_seq
+EP1/src/mandelbrot_seq_noio
+EP1/src/mandelbrot_omp
+EP1/src/mandelbrot_omp_noio
+EP1/src/output.ppm
