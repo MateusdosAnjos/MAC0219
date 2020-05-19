@@ -3,7 +3,6 @@
 #include <math.h>
 #include <omp.h>
 #include <time.h>
-#include <sys/time.h>
 
 double c_x_min;
 double c_x_max;
@@ -57,10 +56,10 @@ void init(int argc, char *argv[]){
     if(argc < 7){
         printf("usage: ./mandelbrot_omp c_x_min c_x_max c_y_min c_y_max image_size n_threads\n");
         printf("examples with image_size = 11500:\n");
-        printf("    Full Picture:         ./mandelbrot_omp -2.5 1.5 -2.0 2.0 11500\n");
-        printf("    Seahorse Valley:      ./mandelbrot_omp -0.8 -0.7 0.05 0.15 11500\n");
-        printf("    Elephant Valley:      ./mandelbrot_omp 0.175 0.375 -0.1 0.1 11500\n");
-        printf("    Triple Spiral Valley: ./mandelbrot_omp -0.188 -0.012 0.554 0.754 11500\n");
+        printf("    Full Picture:         ./mandelbrot_omp -2.5 1.5 -2.0 2.0 11500 10\n");
+        printf("    Seahorse Valley:      ./mandelbrot_omp -0.8 -0.7 0.05 0.15 11500 10\n");
+        printf("    Elephant Valley:      ./mandelbrot_omp 0.175 0.375 -0.1 0.1 11500 10\n");
+        printf("    Triple Spiral Valley: ./mandelbrot_omp -0.188 -0.012 0.554 0.754 11500 10\n");
         exit(0);
     }
     else{
@@ -99,7 +98,7 @@ void update_rgb_buffer(int iteration, int x, int y){
 
 void write_to_file(){
     FILE * file;
-    char * filename               = "output_omp.ppm";
+    char * filename               = "output.ppm";
     char * comment                = "# ";
 
     int max_color_component_value = 255;
@@ -129,10 +128,6 @@ void compute_mandelbrot(){
 
     double c_x;
     double c_y;
-    clock_t start, end;
-    double cpu_time_used;
-
-    start = clock();
 
     #pragma omp parallel num_threads(n_threads) \
                             private(i_x, i_y, iteration, c_x, c_y, z_x, z_y, z_x_squared, z_y_squared) \
@@ -169,10 +164,6 @@ void compute_mandelbrot(){
             update_rgb_buffer(iteration, i_x, i_y);
         };
     };
-    end = clock();
-    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf("tempo gasto %f\n", cpu_time_used);
-
 };
 
 int main(int argc, char *argv[]){
