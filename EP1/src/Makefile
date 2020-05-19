@@ -9,7 +9,7 @@ CC_OMP=-fopenmp
 CC_PTH=-pthread
 
 .PHONY: all
-all: $(OUTPUT)_omp $(OUTPUT)_pth $(OUTPUT)_seq
+all: $(OUTPUT)_omp $(OUTPUT)_pth $(OUTPUT)_seq $(OUTPUT)_omp_noio $(OUTPUT)_pth_noio $(OUTPUT)_seq_noio
 
 $(OUTPUT)_omp: $(OUTPUT)_omp.c
 	$(CC) -o $(OUTPUT)_omp $(CC_OPT) $(CC_OMP) $(OUTPUT)_omp.c
