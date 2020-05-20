@@ -1,0 +1,140 @@
+
+ Performance counter stats for './mandelbrot_seq_noio -2.5 1.5 -2.0 2.0 16' (10 runs):
+
+          0.376809      task-clock (msec)         #    0.569 CPUs utilized            ( +-  2.39% )
+                 0      context-switches          #    0.000 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                49      page-faults               #    0.130 M/sec                    ( +-  0.43% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.000662280 seconds time elapsed                                          ( +-  1.92% )
+
+
+ Performance counter stats for './mandelbrot_seq_noio -2.5 1.5 -2.0 2.0 32' (10 runs):
+
+          0.552800      task-clock (msec)         #    0.648 CPUs utilized            ( +-  0.46% )
+                 0      context-switches          #    0.000 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                49      page-faults               #    0.089 M/sec                    ( +-  0.41% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.000852488 seconds time elapsed                                          ( +-  0.60% )
+
+
+ Performance counter stats for './mandelbrot_seq_noio -2.5 1.5 -2.0 2.0 64' (10 runs):
+
+          1.356273      task-clock (msec)         #    0.818 CPUs utilized            ( +-  0.96% )
+                 0      context-switches          #    0.000 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                49      page-faults               #    0.036 M/sec                    ( +-  0.59% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.001658822 seconds time elapsed                                          ( +-  0.72% )
+
+
+ Performance counter stats for './mandelbrot_seq_noio -2.5 1.5 -2.0 2.0 128' (10 runs):
+
+          4.515517      task-clock (msec)         #    0.937 CPUs utilized            ( +-  0.30% )
+                 0      context-switches          #    0.044 K/sec                    ( +- 66.67% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                49      page-faults               #    0.011 M/sec                    ( +-  0.41% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.004821176 seconds time elapsed                                          ( +-  0.16% )
+
+
+ Performance counter stats for './mandelbrot_seq_noio -2.5 1.5 -2.0 2.0 256' (10 runs):
+
+         16.129883      task-clock (msec)         #    0.982 CPUs utilized            ( +-  0.21% )
+                 0      context-switches          #    0.006 K/sec                    ( +-100.00% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                49      page-faults               #    0.003 M/sec                    ( +-  0.68% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.016423399 seconds time elapsed                                          ( +-  0.27% )
+
+
+ Performance counter stats for './mandelbrot_seq_noio -2.5 1.5 -2.0 2.0 512' (10 runs):
+
+         62.555251      task-clock (msec)         #    0.995 CPUs utilized            ( +-  0.17% )
+                 0      context-switches          #    0.003 K/sec                    ( +- 66.67% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                49      page-faults               #    0.779 K/sec                    ( +-  0.31% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.062870798 seconds time elapsed                                          ( +-  0.19% )
+
+
+ Performance counter stats for './mandelbrot_seq_noio -2.5 1.5 -2.0 2.0 1024' (10 runs):
+
+        247.865261      task-clock (msec)         #    0.999 CPUs utilized            ( +-  0.14% )
+                 0      context-switches          #    0.002 K/sec                    ( +- 40.82% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                49      page-faults               #    0.197 K/sec                    ( +-  0.37% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.248202005 seconds time elapsed                                          ( +-  0.15% )
+
+
+ Performance counter stats for './mandelbrot_seq_noio -2.5 1.5 -2.0 2.0 2048' (10 runs):
+
+        993.182357      task-clock (msec)         #    1.000 CPUs utilized            ( +-  0.51% )
+                 2      context-switches          #    0.002 K/sec                    ( +- 16.55% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                49      page-faults               #    0.050 K/sec                    ( +-  0.62% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.993570375 seconds time elapsed                                          ( +-  0.51% )
+
+
+ Performance counter stats for './mandelbrot_seq_noio -2.5 1.5 -2.0 2.0 4096' (10 runs):
+
+       3943.216622      task-clock (msec)         #    1.000 CPUs utilized            ( +-  0.07% )
+                 4      context-switches          #    0.001 K/sec                    ( +-  7.41% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                48      page-faults               #    0.012 K/sec                    ( +-  0.46% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       3.943630993 seconds time elapsed                                          ( +-  0.07% )
+
+
+ Performance counter stats for './mandelbrot_seq_noio -2.5 1.5 -2.0 2.0 8192' (10 runs):
+
+      15734.376657      task-clock (msec)         #    1.000 CPUs utilized            ( +-  0.07% )
+                 8      context-switches          #    0.000 K/sec                    ( +- 16.43% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                49      page-faults               #    0.003 K/sec                    ( +-  0.53% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+      15.734890561 seconds time elapsed                                          ( +-  0.07% )
+

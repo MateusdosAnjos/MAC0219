@@ -1,0 +1,1120 @@
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 16 1' (10 runs):
+
+          0.849987      task-clock (msec)         #    0.816 CPUs utilized            ( +-  1.28% )
+                 0      context-switches          #    0.000 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                58      page-faults               #    0.068 M/sec                    ( +-  0.37% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.001042164 seconds time elapsed                                          ( +-  1.08% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 16 2' (10 runs):
+
+          1.275530      task-clock (msec)         #    1.119 CPUs utilized            ( +-  1.86% )
+                 2      context-switches          #    0.002 M/sec                    ( +-  4.76% )
+                 0      cpu-migrations            #    0.078 K/sec                    ( +-100.00% )
+                74      page-faults               #    0.058 M/sec                    ( +-  0.34% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.001139381 seconds time elapsed                                          ( +-  2.84% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 16 3' (10 runs):
+
+          1.482214      task-clock (msec)         #    1.308 CPUs utilized            ( +-  1.91% )
+                 3      context-switches          #    0.002 M/sec                  
+                 0      cpu-migrations            #    0.135 K/sec                    ( +- 66.67% )
+                75      page-faults               #    0.051 M/sec                    ( +-  0.50% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.001133575 seconds time elapsed                                          ( +-  2.76% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 16 4' (10 runs):
+
+          1.542268      task-clock (msec)         #    1.410 CPUs utilized            ( +-  1.18% )
+                 5      context-switches          #    0.003 M/sec                    ( +- 10.85% )
+                 1      cpu-migrations            #    0.519 K/sec                    ( +- 36.32% )
+                78      page-faults               #    0.050 M/sec                    ( +-  0.39% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.001093817 seconds time elapsed                                          ( +-  1.14% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 16 5' (10 runs):
+
+          1.645431      task-clock (msec)         #    1.458 CPUs utilized            ( +-  0.91% )
+                 6      context-switches          #    0.004 M/sec                    ( +-  8.24% )
+                 1      cpu-migrations            #    0.851 K/sec                    ( +- 19.05% )
+                79      page-faults               #    0.048 M/sec                    ( +-  0.57% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.001128269 seconds time elapsed                                          ( +-  0.92% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 16 6' (10 runs):
+
+          1.741989      task-clock (msec)         #    1.479 CPUs utilized            ( +-  0.87% )
+                 8      context-switches          #    0.004 M/sec                    ( +-  7.65% )
+                 2      cpu-migrations            #    0.001 M/sec                    ( +- 17.67% )
+                82      page-faults               #    0.047 M/sec                    ( +-  0.50% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.001178101 seconds time elapsed                                          ( +-  1.24% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 16 7' (10 runs):
+
+          1.915302      task-clock (msec)         #    1.531 CPUs utilized            ( +-  1.16% )
+                10      context-switches          #    0.005 M/sec                    ( +-  6.05% )
+                 2      cpu-migrations            #    0.001 M/sec                    ( +- 18.26% )
+                83      page-faults               #    0.043 M/sec                    ( +-  0.42% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.001251064 seconds time elapsed                                          ( +-  1.63% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 16 8' (10 runs):
+
+          2.030053      task-clock (msec)         #    1.613 CPUs utilized            ( +-  1.98% )
+                11      context-switches          #    0.006 M/sec                    ( +-  7.35% )
+                 4      cpu-migrations            #    0.002 M/sec                    ( +- 11.43% )
+                86      page-faults               #    0.042 M/sec                    ( +-  0.46% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.001258442 seconds time elapsed                                          ( +-  1.80% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 32 1' (10 runs):
+
+          2.417447      task-clock (msec)         #    0.922 CPUs utilized            ( +-  0.39% )
+                 0      context-switches          #    0.000 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                58      page-faults               #    0.024 M/sec                    ( +-  0.67% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.002622728 seconds time elapsed                                          ( +-  0.40% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 32 2' (10 runs):
+
+          2.872205      task-clock (msec)         #    1.504 CPUs utilized            ( +-  0.65% )
+                 2      context-switches          #    0.731 K/sec                    ( +-  4.76% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                74      page-faults               #    0.026 M/sec                    ( +-  0.30% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.001910171 seconds time elapsed                                          ( +-  0.60% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 32 3' (10 runs):
+
+          3.029974      task-clock (msec)         #    1.797 CPUs utilized            ( +-  0.83% )
+                 3      context-switches          #    0.001 M/sec                    ( +-  7.84% )
+                 0      cpu-migrations            #    0.165 K/sec                    ( +- 53.75% )
+                75      page-faults               #    0.025 M/sec                    ( +-  0.49% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.001686197 seconds time elapsed                                          ( +-  2.90% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 32 4' (10 runs):
+
+          3.443588      task-clock (msec)         #    2.149 CPUs utilized            ( +-  9.36% )
+                 5      context-switches          #    0.001 M/sec                    ( +-  5.54% )
+                 1      cpu-migrations            #    0.290 K/sec                    ( +- 33.33% )
+                77      page-faults               #    0.022 M/sec                    ( +-  0.51% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.001602254 seconds time elapsed                                          ( +-  4.52% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 32 5' (10 runs):
+
+          3.281902      task-clock (msec)         #    2.103 CPUs utilized            ( +-  0.65% )
+                 7      context-switches          #    0.002 M/sec                    ( +-  9.19% )
+                 1      cpu-migrations            #    0.396 K/sec                    ( +- 23.08% )
+                80      page-faults               #    0.024 M/sec                    ( +-  0.58% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.001560807 seconds time elapsed                                          ( +-  0.98% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 32 6' (10 runs):
+
+          3.422533      task-clock (msec)         #    2.111 CPUs utilized            ( +-  1.00% )
+                10      context-switches          #    0.003 M/sec                    ( +-  9.83% )
+                 2      cpu-migrations            #    0.497 K/sec                    ( +- 30.44% )
+                82      page-faults               #    0.024 M/sec                    ( +-  0.45% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.001621440 seconds time elapsed                                          ( +-  1.23% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 32 7' (10 runs):
+
+          3.494897      task-clock (msec)         #    2.085 CPUs utilized            ( +-  1.05% )
+                11      context-switches          #    0.003 M/sec                    ( +-  4.29% )
+                 3      cpu-migrations            #    0.830 K/sec                    ( +- 18.14% )
+                84      page-faults               #    0.024 M/sec                    ( +-  0.56% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.001676482 seconds time elapsed                                          ( +-  1.90% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 32 8' (10 runs):
+
+          3.713160      task-clock (msec)         #    2.150 CPUs utilized            ( +-  2.50% )
+                11      context-switches          #    0.003 M/sec                    ( +-  5.26% )
+                 4      cpu-migrations            #    0.996 K/sec                    ( +- 15.10% )
+                86      page-faults               #    0.023 M/sec                    ( +-  0.37% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.001727170 seconds time elapsed                                          ( +-  1.93% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 64 1' (10 runs):
+
+          8.582197      task-clock (msec)         #    0.975 CPUs utilized            ( +-  0.28% )
+                 0      context-switches          #    0.000 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+                59      page-faults               #    0.007 M/sec                    ( +-  0.58% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.008802087 seconds time elapsed                                          ( +-  0.29% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 64 2' (10 runs):
+
+          9.216062      task-clock (msec)         #    1.804 CPUs utilized            ( +-  0.58% )
+                 2      context-switches          #    0.239 K/sec                    ( +-  6.06% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                74      page-faults               #    0.008 M/sec                    ( +-  0.70% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.005108444 seconds time elapsed                                          ( +-  0.52% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 64 3' (10 runs):
+
+          9.338780      task-clock (msec)         #    2.512 CPUs utilized            ( +-  0.33% )
+                 4      context-switches          #    0.385 K/sec                    ( +-  6.14% )
+                 0      cpu-migrations            #    0.032 K/sec                    ( +- 71.15% )
+                75      page-faults               #    0.008 M/sec                    ( +-  0.68% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.003717295 seconds time elapsed                                          ( +-  0.40% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 64 4' (10 runs):
+
+          9.548340      task-clock (msec)         #    2.799 CPUs utilized            ( +-  0.54% )
+                 5      context-switches          #    0.503 K/sec                    ( +-  6.80% )
+                 1      cpu-migrations            #    0.136 K/sec                    ( +- 20.03% )
+                78      page-faults               #    0.008 M/sec                    ( +-  0.52% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.003411814 seconds time elapsed                                          ( +-  2.90% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 64 5' (10 runs):
+
+          9.807747      task-clock (msec)         #    3.025 CPUs utilized            ( +-  0.47% )
+                 7      context-switches          #    0.734 K/sec                    ( +-  4.04% )
+                 2      cpu-migrations            #    0.184 K/sec                    ( +- 18.14% )
+                80      page-faults               #    0.008 M/sec                    ( +-  0.47% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.003242188 seconds time elapsed                                          ( +-  0.87% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 64 6' (10 runs):
+
+          9.801668      task-clock (msec)         #    2.948 CPUs utilized            ( +-  0.61% )
+                 9      context-switches          #    0.898 K/sec                    ( +-  5.03% )
+                 2      cpu-migrations            #    0.204 K/sec                    ( +- 18.26% )
+                81      page-faults               #    0.008 M/sec                    ( +-  0.48% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.003324386 seconds time elapsed                                          ( +-  2.21% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 64 7' (10 runs):
+
+          9.913583      task-clock (msec)         #    2.978 CPUs utilized            ( +-  0.51% )
+                10      context-switches          #    0.001 M/sec                    ( +-  6.70% )
+                 3      cpu-migrations            #    0.303 K/sec                    ( +- 22.22% )
+                84      page-faults               #    0.008 M/sec                    ( +-  0.41% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.003329374 seconds time elapsed                                          ( +-  2.05% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 64 8' (10 runs):
+
+         10.122900      task-clock (msec)         #    3.001 CPUs utilized            ( +-  0.52% )
+                12      context-switches          #    0.001 M/sec                    ( +-  5.66% )
+                 4      cpu-migrations            #    0.385 K/sec                    ( +- 18.90% )
+                85      page-faults               #    0.008 M/sec                    ( +-  0.40% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.003372746 seconds time elapsed                                          ( +-  2.60% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 128 1' (10 runs):
+
+         33.325346      task-clock (msec)         #    0.994 CPUs utilized            ( +-  0.14% )
+                 0      context-switches          #    0.003 K/sec                    ( +-100.00% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                58      page-faults               #    0.002 M/sec                    ( +-  0.40% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.033543248 seconds time elapsed                                          ( +-  0.14% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 128 2' (10 runs):
+
+         33.980971      task-clock (msec)         #    1.940 CPUs utilized            ( +-  0.63% )
+                 2      context-switches          #    0.065 K/sec                    ( +-  6.06% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                73      page-faults               #    0.002 M/sec                    ( +-  0.50% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.017514504 seconds time elapsed                                          ( +-  0.64% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 128 3' (10 runs):
+
+         34.418645      task-clock (msec)         #    2.850 CPUs utilized            ( +-  0.29% )
+                 4      context-switches          #    0.119 K/sec                    ( +-  7.67% )
+                 0      cpu-migrations            #    0.012 K/sec                    ( +- 40.82% )
+                75      page-faults               #    0.002 M/sec                    ( +-  0.54% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.012075587 seconds time elapsed                                          ( +-  0.29% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 128 4' (10 runs):
+
+         34.959171      task-clock (msec)         #    3.493 CPUs utilized            ( +-  0.40% )
+                 6      context-switches          #    0.172 K/sec                    ( +-  7.45% )
+                 2      cpu-migrations            #    0.049 K/sec                    ( +- 12.56% )
+                78      page-faults               #    0.002 M/sec                    ( +-  0.39% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.010007913 seconds time elapsed                                          ( +-  2.90% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 128 5' (10 runs):
+
+         35.685975      task-clock (msec)         #    3.561 CPUs utilized            ( +-  0.25% )
+                 9      context-switches          #    0.241 K/sec                    ( +-  5.80% )
+                 2      cpu-migrations            #    0.042 K/sec                    ( +- 20.49% )
+                79      page-faults               #    0.002 M/sec                    ( +-  0.53% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.010022726 seconds time elapsed                                          ( +-  1.79% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 128 6' (10 runs):
+
+         35.749586      task-clock (msec)         #    3.657 CPUs utilized            ( +-  0.48% )
+                10      context-switches          #    0.271 K/sec                    ( +-  3.78% )
+                 3      cpu-migrations            #    0.078 K/sec                    ( +- 16.67% )
+                81      page-faults               #    0.002 M/sec                    ( +-  0.43% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.009776940 seconds time elapsed                                          ( +-  0.43% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 128 7' (10 runs):
+
+         35.880040      task-clock (msec)         #    3.622 CPUs utilized            ( +-  0.39% )
+                11      context-switches          #    0.298 K/sec                    ( +-  6.97% )
+                 3      cpu-migrations            #    0.095 K/sec                    ( +- 18.70% )
+                84      page-faults               #    0.002 M/sec                    ( +-  0.44% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.009905766 seconds time elapsed                                          ( +-  1.02% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 128 8' (10 runs):
+
+         35.619358      task-clock (msec)         #    3.614 CPUs utilized            ( +-  0.37% )
+                15      context-switches          #    0.416 K/sec                    ( +-  4.70% )
+                 6      cpu-migrations            #    0.160 K/sec                    ( +- 12.00% )
+                85      page-faults               #    0.002 M/sec                    ( +-  0.43% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.009855070 seconds time elapsed                                          ( +-  1.15% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 256 1' (10 runs):
+
+        131.655453      task-clock (msec)         #    0.998 CPUs utilized            ( +-  0.07% )
+                 0      context-switches          #    0.002 K/sec                    ( +- 50.92% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                58      page-faults               #    0.443 K/sec                    ( +-  0.51% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.131914376 seconds time elapsed                                          ( +-  0.07% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 256 2' (10 runs):
+
+        132.471129      task-clock (msec)         #    1.982 CPUs utilized            ( +-  0.09% )
+                 3      context-switches          #    0.020 K/sec                    ( +- 10.26% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                74      page-faults               #    0.557 K/sec                    ( +-  0.44% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.066824328 seconds time elapsed                                          ( +-  0.08% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 256 3' (10 runs):
+
+        136.606399      task-clock (msec)         #    2.958 CPUs utilized            ( +-  1.05% )
+                 4      context-switches          #    0.029 K/sec                    ( +-  5.98% )
+                 0      cpu-migrations            #    0.001 K/sec                    ( +- 66.67% )
+                76      page-faults               #    0.554 K/sec                    ( +-  0.44% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.046180736 seconds time elapsed                                          ( +-  1.03% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 256 4' (10 runs):
+
+        138.179103      task-clock (msec)         #    3.900 CPUs utilized            ( +-  0.33% )
+                10      context-switches          #    0.069 K/sec                    ( +-  5.42% )
+                 1      cpu-migrations            #    0.007 K/sec                    ( +- 25.82% )
+                77      page-faults               #    0.561 K/sec                    ( +-  0.35% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.035430806 seconds time elapsed                                          ( +-  0.48% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 256 5' (10 runs):
+
+        138.172126      task-clock (msec)         #    3.912 CPUs utilized            ( +-  0.20% )
+                14      context-switches          #    0.099 K/sec                    ( +-  3.09% )
+                 2      cpu-migrations            #    0.016 K/sec                    ( +- 13.21% )
+                80      page-faults               #    0.577 K/sec                    ( +-  0.53% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.035320159 seconds time elapsed                                          ( +-  0.19% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 256 6' (10 runs):
+
+        138.703973      task-clock (msec)         #    3.902 CPUs utilized            ( +-  0.28% )
+                18      context-switches          #    0.126 K/sec                    ( +-  4.02% )
+                 3      cpu-migrations            #    0.022 K/sec                    ( +- 15.71% )
+                82      page-faults               #    0.588 K/sec                    ( +-  0.53% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.035549387 seconds time elapsed                                          ( +-  0.30% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 256 7' (10 runs):
+
+        138.220535      task-clock (msec)         #    3.910 CPUs utilized            ( +-  0.13% )
+                21      context-switches          #    0.154 K/sec                    ( +-  1.86% )
+                 2      cpu-migrations            #    0.015 K/sec                    ( +- 18.03% )
+                83      page-faults               #    0.603 K/sec                    ( +-  0.37% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.035348846 seconds time elapsed                                          ( +-  0.13% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 256 8' (10 runs):
+
+        138.709069      task-clock (msec)         #    3.889 CPUs utilized            ( +-  0.25% )
+                23      context-switches          #    0.168 K/sec                    ( +-  4.83% )
+                 5      cpu-migrations            #    0.035 K/sec                    ( +- 14.41% )
+                86      page-faults               #    0.621 K/sec                    ( +-  0.75% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.035662611 seconds time elapsed                                          ( +-  0.47% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 512 1' (10 runs):
+
+        525.043456      task-clock (msec)         #    0.999 CPUs utilized            ( +-  0.04% )
+                 1      context-switches          #    0.002 K/sec                    ( +- 14.91% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                58      page-faults               #    0.110 K/sec                    ( +-  0.50% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.525318880 seconds time elapsed                                          ( +-  0.04% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 512 2' (10 runs):
+
+        528.315685      task-clock (msec)         #    1.995 CPUs utilized            ( +-  0.12% )
+                 4      context-switches          #    0.007 K/sec                    ( +- 10.65% )
+                 0      cpu-migrations            #    0.001 K/sec                    ( +- 44.72% )
+                74      page-faults               #    0.140 K/sec                    ( +-  0.37% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.264760980 seconds time elapsed                                          ( +-  0.13% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 512 3' (10 runs):
+
+        541.498651      task-clock (msec)         #    2.988 CPUs utilized            ( +-  0.16% )
+                 4      context-switches          #    0.008 K/sec                    ( +-  8.55% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                76      page-faults               #    0.141 K/sec                    ( +-  0.50% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.181226415 seconds time elapsed                                          ( +-  0.16% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 512 4' (10 runs):
+
+        548.380215      task-clock (msec)         #    3.977 CPUs utilized            ( +-  0.16% )
+                15      context-switches          #    0.028 K/sec                    ( +-  4.68% )
+                 1      cpu-migrations            #    0.003 K/sec                    ( +- 11.66% )
+                77      page-faults               #    0.141 K/sec                    ( +-  0.43% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.137891110 seconds time elapsed                                          ( +-  0.17% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 512 5' (10 runs):
+
+        550.610436      task-clock (msec)         #    3.975 CPUs utilized            ( +-  0.15% )
+                26      context-switches          #    0.047 K/sec                    ( +-  2.78% )
+                 4      cpu-migrations            #    0.008 K/sec                    ( +- 12.03% )
+                80      page-faults               #    0.145 K/sec                    ( +-  0.54% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.138520715 seconds time elapsed                                          ( +-  0.14% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 512 6' (10 runs):
+
+        550.063502      task-clock (msec)         #    3.973 CPUs utilized            ( +-  0.17% )
+                37      context-switches          #    0.067 K/sec                    ( +-  2.45% )
+                 6      cpu-migrations            #    0.010 K/sec                    ( +-  7.62% )
+                82      page-faults               #    0.148 K/sec                    ( +-  0.49% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.138440391 seconds time elapsed                                          ( +-  0.17% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 512 7' (10 runs):
+
+        548.044187      task-clock (msec)         #    3.968 CPUs utilized            ( +-  0.20% )
+                46      context-switches          #    0.084 K/sec                    ( +-  1.52% )
+                 6      cpu-migrations            #    0.011 K/sec                    ( +- 15.35% )
+                84      page-faults               #    0.153 K/sec                    ( +-  0.46% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.138121282 seconds time elapsed                                          ( +-  0.27% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 512 8' (10 runs):
+
+        550.694420      task-clock (msec)         #    3.975 CPUs utilized            ( +-  0.16% )
+                56      context-switches          #    0.101 K/sec                    ( +-  1.64% )
+                 5      cpu-migrations            #    0.010 K/sec                    ( +-  9.76% )
+                86      page-faults               #    0.157 K/sec                    ( +-  0.38% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.138556042 seconds time elapsed                                          ( +-  0.16% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 1024 1' (10 runs):
+
+       2108.596776      task-clock (msec)         #    1.000 CPUs utilized            ( +-  0.09% )
+                 2      context-switches          #    0.001 K/sec                    ( +-  9.21% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                58      page-faults               #    0.027 K/sec                    ( +-  0.35% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       2.108961388 seconds time elapsed                                          ( +-  0.09% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 1024 2' (10 runs):
+
+       2109.147210      task-clock (msec)         #    1.999 CPUs utilized            ( +-  0.04% )
+                 6      context-switches          #    0.003 K/sec                    ( +-  6.27% )
+                 1      cpu-migrations            #    0.000 K/sec                    ( +- 34.94% )
+                74      page-faults               #    0.035 K/sec                    ( +-  0.53% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       1.055283672 seconds time elapsed                                          ( +-  0.04% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 1024 3' (10 runs):
+
+       2178.461228      task-clock (msec)         #    2.996 CPUs utilized            ( +-  0.08% )
+                 6      context-switches          #    0.003 K/sec                    ( +- 12.42% )
+                 0      cpu-migrations            #    0.000 K/sec                    ( +- 44.72% )
+                76      page-faults               #    0.035 K/sec                    ( +-  0.49% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.727061347 seconds time elapsed                                          ( +-  0.08% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 1024 4' (10 runs):
+
+       2208.964386      task-clock (msec)         #    3.993 CPUs utilized            ( +-  0.09% )
+                16      context-switches          #    0.007 K/sec                    ( +-  4.63% )
+                 1      cpu-migrations            #    0.000 K/sec                    ( +- 21.21% )
+                78      page-faults               #    0.035 K/sec                    ( +-  0.39% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.553245693 seconds time elapsed                                          ( +-  0.09% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 1024 5' (10 runs):
+
+       2213.888500      task-clock (msec)         #    3.992 CPUs utilized            ( +-  0.08% )
+                62      context-switches          #    0.028 K/sec                    ( +-  0.96% )
+                 9      cpu-migrations            #    0.004 K/sec                    ( +-  5.03% )
+                80      page-faults               #    0.036 K/sec                    ( +-  0.35% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.554636856 seconds time elapsed                                          ( +-  0.10% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 1024 6' (10 runs):
+
+       2213.887780      task-clock (msec)         #    3.991 CPUs utilized            ( +-  0.11% )
+               110      context-switches          #    0.049 K/sec                    ( +-  1.42% )
+                12      cpu-migrations            #    0.005 K/sec                    ( +-  7.56% )
+                82      page-faults               #    0.037 K/sec                    ( +-  0.51% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.554682222 seconds time elapsed                                          ( +-  0.12% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 1024 7' (10 runs):
+
+       2220.520970      task-clock (msec)         #    3.991 CPUs utilized            ( +-  0.08% )
+               154      context-switches          #    0.070 K/sec                    ( +-  0.55% )
+                10      cpu-migrations            #    0.004 K/sec                    ( +-  7.40% )
+                84      page-faults               #    0.038 K/sec                    ( +-  0.40% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.556353447 seconds time elapsed                                          ( +-  0.08% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 1024 8' (10 runs):
+
+       2213.077619      task-clock (msec)         #    3.991 CPUs utilized            ( +-  0.10% )
+               195      context-switches          #    0.088 K/sec                    ( +-  1.18% )
+                10      cpu-migrations            #    0.005 K/sec                    ( +- 17.45% )
+                86      page-faults               #    0.039 K/sec                    ( +-  0.49% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       0.554545131 seconds time elapsed                                          ( +-  0.10% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 2048 1' (10 runs):
+
+       8406.337619      task-clock (msec)         #    1.000 CPUs utilized            ( +-  0.12% )
+                 4      context-switches          #    0.000 K/sec                    ( +-  2.44% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                58      page-faults               #    0.007 K/sec                    ( +-  0.48% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       8.406725558 seconds time elapsed                                          ( +-  0.12% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 2048 2' (10 runs):
+
+       8429.673281      task-clock (msec)         #    2.000 CPUs utilized            ( +-  0.03% )
+                11      context-switches          #    0.001 K/sec                    ( +-  4.74% )
+                 1      cpu-migrations            #    0.000 K/sec                    ( +- 37.19% )
+                74      page-faults               #    0.009 K/sec                    ( +-  0.70% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       4.215617211 seconds time elapsed                                          ( +-  0.03% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 2048 3' (10 runs):
+
+       8632.034950      task-clock (msec)         #    2.999 CPUs utilized            ( +-  0.07% )
+                13      context-switches          #    0.002 K/sec                    ( +-  3.72% )
+                 1      cpu-migrations            #    0.000 K/sec                    ( +- 24.22% )
+                76      page-faults               #    0.009 K/sec                    ( +-  0.54% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       2.878292105 seconds time elapsed                                          ( +-  0.07% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 2048 4' (10 runs):
+
+       8755.291682      task-clock (msec)         #    3.998 CPUs utilized            ( +-  0.07% )
+                30      context-switches          #    0.003 K/sec                    ( +-  6.64% )
+                 1      cpu-migrations            #    0.000 K/sec                    ( +- 21.21% )
+                78      page-faults               #    0.009 K/sec                    ( +-  0.42% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       2.190177433 seconds time elapsed                                          ( +-  0.07% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 2048 5' (10 runs):
+
+       8741.280031      task-clock (msec)         #    3.998 CPUs utilized            ( +-  0.09% )
+               211      context-switches          #    0.024 K/sec                    ( +-  0.53% )
+                28      cpu-migrations            #    0.003 K/sec                    ( +-  2.53% )
+                80      page-faults               #    0.009 K/sec                    ( +-  0.48% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       2.186415024 seconds time elapsed                                          ( +-  0.09% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 2048 6' (10 runs):
+
+       8752.858504      task-clock (msec)         #    3.998 CPUs utilized            ( +-  0.04% )
+               396      context-switches          #    0.045 K/sec                    ( +-  0.57% )
+                53      cpu-migrations            #    0.006 K/sec                    ( +-  7.25% )
+                82      page-faults               #    0.009 K/sec                    ( +-  0.62% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       2.189513186 seconds time elapsed                                          ( +-  0.04% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 2048 7' (10 runs):
+
+       8773.768918      task-clock (msec)         #    3.998 CPUs utilized            ( +-  0.34% )
+               570      context-switches          #    0.065 K/sec                    ( +-  0.44% )
+                27      cpu-migrations            #    0.003 K/sec                    ( +-  4.08% )
+                84      page-faults               #    0.010 K/sec                    ( +-  0.50% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       2.194677537 seconds time elapsed                                          ( +-  0.34% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 2048 8' (10 runs):
+
+       8736.634200      task-clock (msec)         #    3.998 CPUs utilized            ( +-  0.06% )
+               740      context-switches          #    0.085 K/sec                    ( +-  0.43% )
+                10      cpu-migrations            #    0.001 K/sec                    ( +- 27.37% )
+                86      page-faults               #    0.010 K/sec                    ( +-  0.53% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       2.185333618 seconds time elapsed                                          ( +-  0.06% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 4096 1' (10 runs):
+
+      33618.196438      task-clock (msec)         #    1.000 CPUs utilized            ( +-  0.06% )
+                21      context-switches          #    0.001 K/sec                    ( +- 22.14% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                58      page-faults               #    0.002 K/sec                    ( +-  0.57% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+      33.618901390 seconds time elapsed                                          ( +-  0.06% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 4096 2' (10 runs):
+
+      33695.894068      task-clock (msec)         #    2.000 CPUs utilized            ( +-  0.08% )
+                18      context-switches          #    0.001 K/sec                    ( +-  9.17% )
+                 0      cpu-migrations            #    0.000 K/sec                    ( +- 66.67% )
+                73      page-faults               #    0.002 K/sec                    ( +-  0.46% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+      16.848839438 seconds time elapsed                                          ( +-  0.08% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 4096 3' (10 runs):
+
+      34717.440462      task-clock (msec)         #    3.000 CPUs utilized            ( +-  0.09% )
+                26      context-switches          #    0.001 K/sec                    ( +-  6.34% )
+                 0      cpu-migrations            #    0.000 K/sec                    ( +- 55.28% )
+                75      page-faults               #    0.002 K/sec                    ( +-  0.44% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+      11.573532212 seconds time elapsed                                          ( +-  0.09% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 4096 4' (10 runs):
+
+      35213.929162      task-clock (msec)         #    3.999 CPUs utilized            ( +-  0.07% )
+                56      context-switches          #    0.002 K/sec                    ( +-  5.09% )
+                 1      cpu-migrations            #    0.000 K/sec                    ( +- 11.66% )
+                77      page-faults               #    0.002 K/sec                    ( +-  0.36% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       8.805330798 seconds time elapsed                                          ( +-  0.07% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 4096 5' (10 runs):
+
+      35246.226830      task-clock (msec)         #    3.999 CPUs utilized            ( +-  0.07% )
+               802      context-switches          #    0.023 K/sec                    ( +-  0.60% )
+               133      cpu-migrations            #    0.004 K/sec                    ( +-  5.62% )
+                79      page-faults               #    0.002 K/sec                    ( +-  0.44% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       8.812902161 seconds time elapsed                                          ( +-  0.07% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 4096 6' (10 runs):
+
+      35097.278809      task-clock (msec)         #    3.999 CPUs utilized            ( +-  0.23% )
+              1531      context-switches          #    0.044 K/sec                    ( +-  0.52% )
+               196      cpu-migrations            #    0.006 K/sec                    ( +-  6.49% )
+                81      page-faults               #    0.002 K/sec                    ( +-  0.49% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       8.775931776 seconds time elapsed                                          ( +-  0.23% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 4096 7' (10 runs):
+
+      35170.546024      task-clock (msec)         #    3.999 CPUs utilized            ( +-  0.04% )
+              2250      context-switches          #    0.064 K/sec                    ( +-  0.34% )
+               121      cpu-migrations            #    0.003 K/sec                    ( +- 12.66% )
+                84      page-faults               #    0.002 K/sec                    ( +-  0.64% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       8.794471733 seconds time elapsed                                          ( +-  0.04% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 4096 8' (10 runs):
+
+      35192.462898      task-clock (msec)         #    3.999 CPUs utilized            ( +-  0.04% )
+              2947      context-switches          #    0.084 K/sec                    ( +-  0.70% )
+                34      cpu-migrations            #    0.001 K/sec                    ( +- 78.00% )
+                85      page-faults               #    0.002 K/sec                    ( +-  0.35% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+       8.799719434 seconds time elapsed                                          ( +-  0.04% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 8192 1' (10 runs):
+
+     134408.907364      task-clock (msec)         #    1.000 CPUs utilized            ( +-  0.05% )
+                83      context-switches          #    0.001 K/sec                    ( +- 24.11% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                58      page-faults               #    0.000 K/sec                    ( +-  0.26% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+     134.410900486 seconds time elapsed                                          ( +-  0.05% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 8192 2' (10 runs):
+
+     134624.275440      task-clock (msec)         #    2.000 CPUs utilized            ( +-  0.02% )
+                80      context-switches          #    0.001 K/sec                    ( +- 14.17% )
+                 0      cpu-migrations            #    0.000 K/sec                    ( +- 71.15% )
+                74      page-faults               #    0.001 K/sec                    ( +-  0.58% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+      67.313588836 seconds time elapsed                                          ( +-  0.02% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 8192 3' (10 runs):
+
+     138108.070127      task-clock (msec)         #    3.000 CPUs utilized            ( +-  0.16% )
+                84      context-switches          #    0.001 K/sec                    ( +-  7.00% )
+                 0      cpu-migrations            #    0.000 K/sec                    ( +- 76.38% )
+                76      page-faults               #    0.001 K/sec                    ( +-  0.41% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+      46.037506026 seconds time elapsed                                          ( +-  0.16% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 8192 4' (10 runs):
+
+     140094.242673      task-clock (msec)         #    4.000 CPUs utilized            ( +-  0.08% )
+               146      context-switches          #    0.001 K/sec                    ( +-  4.01% )
+                 1      cpu-migrations            #    0.000 K/sec                    ( +- 16.32% )
+                78      page-faults               #    0.001 K/sec                    ( +-  0.52% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+      35.026322873 seconds time elapsed                                          ( +-  0.07% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 8192 5' (10 runs):
+
+     140152.319103      task-clock (msec)         #    4.000 CPUs utilized            ( +-  0.02% )
+              3118      context-switches          #    0.022 K/sec                    ( +-  0.41% )
+               567      cpu-migrations            #    0.004 K/sec                    ( +-  3.80% )
+                80      page-faults               #    0.001 K/sec                    ( +-  0.46% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+      35.040597164 seconds time elapsed                                          ( +-  0.02% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 8192 6' (10 runs):
+
+     140056.214158      task-clock (msec)         #    4.000 CPUs utilized            ( +-  0.08% )
+              6078      context-switches          #    0.043 K/sec                    ( +-  0.61% )
+               862      cpu-migrations            #    0.006 K/sec                    ( +-  8.54% )
+                81      page-faults               #    0.001 K/sec                    ( +-  0.49% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+      35.016946610 seconds time elapsed                                          ( +-  0.08% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 8192 7' (10 runs):
+
+     140199.064402      task-clock (msec)         #    4.000 CPUs utilized            ( +-  0.03% )
+              8878      context-switches          #    0.063 K/sec                    ( +-  0.12% )
+               394      cpu-migrations            #    0.003 K/sec                    ( +-  4.31% )
+                84      page-faults               #    0.001 K/sec                    ( +-  0.46% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+      35.052506545 seconds time elapsed                                          ( +-  0.03% )
+
+
+ Performance counter stats for './mandelbrot_pth_noio -0.188 -0.012 0.554 0.754 8192 8' (10 runs):
+
+     140058.404587      task-clock (msec)         #    4.000 CPUs utilized            ( +-  0.07% )
+             11734      context-switches          #    0.084 K/sec                    ( +-  0.08% )
+                11      cpu-migrations            #    0.000 K/sec                    ( +- 15.10% )
+                86      page-faults               #    0.001 K/sec                    ( +-  0.50% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+      35.017208878 seconds time elapsed                                          ( +-  0.07% )
+
