@@ -1,0 +1,174 @@
+
+ Performance counter stats for './mandelbrot_seq_noio -0.8 -0.7 0.05 0.15 16' (10 runs):
+
+              0.51 msec task-clock:u              #    0.718 CPUs utilized            ( +-  9.76% )
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+                48      page-faults:u             #    0.095 M/sec                    ( +-  1.02% )
+           1210922      cycles:u                  #    2.396 GHz                      ( +-  0.40% )
+             12093      stalled-cycles-frontend:u #    1.00% frontend cycles idle     ( +-  3.92% )
+            916097      stalled-cycles-backend:u  #   75.65% backend cycles idle      ( +-  3.77% )
+           1244224      instructions:u            #    1.03  insn per cycle         
+                                                  #    0.74  stalled cycles per insn  ( +-  0.00% )
+            108605      branches:u                #  214.864 M/sec                    ( +-  0.00% )
+     <not counted>      branch-misses:u                                               (0.00%)
+
+         0.0007044 +- 0.0000548 seconds time elapsed  ( +-  7.79% )
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+
+ Performance counter stats for './mandelbrot_seq_noio -0.8 -0.7 0.05 0.15 32' (10 runs):
+
+              1.44 msec task-clock:u              #    0.895 CPUs utilized            ( +- 10.44% )
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+                48      page-faults:u             #    0.033 M/sec                    ( +-  0.56% )
+           4328574      cycles:u                  #    3.004 GHz                      ( +-  1.70% )  (72.92%)
+             13425      stalled-cycles-frontend:u #    0.31% frontend cycles idle     ( +-  4.05% )
+           3705032      stalled-cycles-backend:u  #   85.59% backend cycles idle      ( +-  1.51% )
+           4605783      instructions:u            #    1.06  insn per cycle         
+                                                  #    0.80  stalled cycles per insn  ( +-  0.00% )
+            358750      branches:u                #  248.962 M/sec                    ( +-  0.00% )
+               788      branch-misses:u           #    0.22% of all branches          ( +- 45.32% )  (27.08%)
+
+          0.001610 +- 0.000165 seconds time elapsed  ( +- 10.27% )
+
+
+ Performance counter stats for './mandelbrot_seq_noio -0.8 -0.7 0.05 0.15 64' (10 runs):
+
+              8.59 msec task-clock:u              #    0.977 CPUs utilized            ( +-  1.71% )
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+                48      page-faults:u             #    0.006 M/sec                    ( +-  0.44% )
+          16998238      cycles:u                  #    1.979 GHz                      ( +-  0.22% )  (65.08%)
+             21220      stalled-cycles-frontend:u #    0.12% frontend cycles idle     ( +-  0.94% )  (65.07%)
+          15118185      stalled-cycles-backend:u  #   88.94% backend cycles idle      ( +-  0.13% )  (81.80%)
+          18031854      instructions:u            #    1.06  insn per cycle         
+                                                  #    0.84  stalled cycles per insn  ( +-  0.00% )
+           1357770      branches:u                #  158.077 M/sec                    ( +-  0.00% )
+              4762      branch-misses:u           #    0.35% of all branches          ( +-  0.79% )  (88.05%)
+
+          0.008793 +- 0.000146 seconds time elapsed  ( +-  1.67% )
+
+
+ Performance counter stats for './mandelbrot_seq_noio -0.8 -0.7 0.05 0.15 128' (10 runs):
+
+             31.56 msec task-clock:u              #    0.991 CPUs utilized            ( +-  5.76% )
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+                48      page-faults:u             #    0.002 M/sec                    ( +-  0.72% )
+          68258611      cycles:u                  #    2.163 GHz                      ( +-  0.38% )  (81.94%)
+             31083      stalled-cycles-frontend:u #    0.05% frontend cycles idle     ( +-  1.86% )  (82.00%)
+          59826950      stalled-cycles-backend:u  #   87.65% backend cycles idle      ( +-  0.70% )  (81.96%)
+          71656930      instructions:u            #    1.05  insn per cycle         
+                                                  #    0.83  stalled cycles per insn  ( +-  0.39% )  (82.41%)
+           5368719      branches:u                #  170.124 M/sec                    ( +-  0.25% )  (84.92%)
+             17426      branch-misses:u           #    0.32% of all branches          ( +-  0.61% )  (86.77%)
+
+           0.03186 +- 0.00180 seconds time elapsed  ( +-  5.64% )
+
+
+ Performance counter stats for './mandelbrot_seq_noio -0.8 -0.7 0.05 0.15 256' (10 runs):
+
+             70.49 msec task-clock:u              #    0.992 CPUs utilized            ( +-  5.42% )
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+                48      page-faults:u             #    0.688 K/sec                    ( +-  0.83% )
+         274641103      cycles:u                  #    3.896 GHz                      ( +-  0.15% )  (81.92%)
+             80118      stalled-cycles-frontend:u #    0.03% frontend cycles idle     ( +-  0.67% )  (82.21%)
+         240561683      stalled-cycles-backend:u  #   87.59% backend cycles idle      ( +-  0.14% )  (83.40%)
+         285931318      instructions:u            #    1.04  insn per cycle         
+                                                  #    0.84  stalled cycles per insn  ( +-  0.09% )  (83.96%)
+          21206078      branches:u                #  300.832 M/sec                    ( +-  0.26% )  (84.96%)
+             66067      branch-misses:u           #    0.31% of all branches          ( +-  0.51% )  (83.55%)
+
+           0.07104 +- 0.00395 seconds time elapsed  ( +-  5.56% )
+
+
+ Performance counter stats for './mandelbrot_seq_noio -0.8 -0.7 0.05 0.15 512' (10 runs):
+
+            258.02 msec task-clock:u              #    0.999 CPUs utilized            ( +-  1.34% )
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+                48      page-faults:u             #    0.186 K/sec                    ( +-  0.65% )
+        1095269197      cycles:u                  #    4.245 GHz                      ( +-  0.02% )  (83.13%)
+            277077      stalled-cycles-frontend:u #    0.03% frontend cycles idle     ( +-  0.48% )  (83.28%)
+         956069500      stalled-cycles-backend:u  #   87.29% backend cycles idle      ( +-  0.17% )  (83.42%)
+        1144434382      instructions:u            #    1.04  insn per cycle         
+                                                  #    0.84  stalled cycles per insn  ( +-  0.02% )  (83.49%)
+          85088749      branches:u                #  329.782 M/sec                    ( +-  0.06% )  (83.55%)
+            260611      branch-misses:u           #    0.31% of all branches          ( +-  0.36% )  (83.14%)
+
+           0.25824 +- 0.00346 seconds time elapsed  ( +-  1.34% )
+
+
+ Performance counter stats for './mandelbrot_seq_noio -0.8 -0.7 0.05 0.15 1024' (10 runs):
+
+           1011.54 msec task-clock:u              #    1.000 CPUs utilized            ( +-  0.04% )
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+                49      page-faults:u             #    0.048 K/sec                    ( +-  0.89% )
+        4377483300      cycles:u                  #    4.328 GHz                      ( +-  0.01% )  (83.23%)
+           1056728      stalled-cycles-frontend:u #    0.02% frontend cycles idle     ( +-  0.20% )  (83.36%)
+        3829176725      stalled-cycles-backend:u  #   87.47% backend cycles idle      ( +-  0.03% )  (83.39%)
+        4575847965      instructions:u            #    1.05  insn per cycle         
+                                                  #    0.84  stalled cycles per insn  ( +-  0.00% )  (83.39%)
+         340439677      branches:u                #  336.557 M/sec                    ( +-  0.01% )  (83.39%)
+           1034173      branch-misses:u           #    0.30% of all branches          ( +-  0.21% )  (83.24%)
+
+          1.011714 +- 0.000441 seconds time elapsed  ( +-  0.04% )
+
+
+ Performance counter stats for './mandelbrot_seq_noio -0.8 -0.7 0.05 0.15 2048' (10 runs):
+
+           4040.01 msec task-clock:u              #    1.000 CPUs utilized            ( +-  0.12% )
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+                47      page-faults:u             #    0.012 K/sec                    ( +-  0.63% )
+       17505835943      cycles:u                  #    4.333 GHz                      ( +-  0.01% )  (83.31%)
+           4138165      stalled-cycles-frontend:u #    0.02% frontend cycles idle     ( +-  0.24% )  (83.31%)
+       15365547273      stalled-cycles-backend:u  #   87.77% backend cycles idle      ( +-  0.04% )  (83.33%)
+       18299138392      instructions:u            #    1.05  insn per cycle         
+                                                  #    0.84  stalled cycles per insn  ( +-  0.00% )  (83.36%)
+        1361495994      branches:u                #  337.003 M/sec                    ( +-  0.00% )  (83.37%)
+           4111772      branch-misses:u           #    0.30% of all branches          ( +-  0.25% )  (83.32%)
+
+           4.04024 +- 0.00466 seconds time elapsed  ( +-  0.12% )
+
+
+ Performance counter stats for './mandelbrot_seq_noio -0.8 -0.7 0.05 0.15 4096' (10 runs):
+
+          16163.88 msec task-clock:u              #    1.000 CPUs utilized            ( +-  0.01% )
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+                48      page-faults:u             #    0.003 K/sec                    ( +-  0.81% )
+       70004261771      cycles:u                  #    4.331 GHz                      ( +-  0.01% )  (83.33%)
+          16395302      stalled-cycles-frontend:u #    0.02% frontend cycles idle     ( +-  0.21% )  (83.33%)
+       61490351986      stalled-cycles-backend:u  #   87.84% backend cycles idle      ( +-  0.01% )  (83.33%)
+       73194181610      instructions:u            #    1.05  insn per cycle         
+                                                  #    0.84  stalled cycles per insn  ( +-  0.00% )  (83.33%)
+        5445947272      branches:u                #  336.921 M/sec                    ( +-  0.00% )  (83.34%)
+          16345789      branch-misses:u           #    0.30% of all branches          ( +-  0.22% )  (83.33%)
+
+          16.16418 +- 0.00230 seconds time elapsed  ( +-  0.01% )
+
+
+ Performance counter stats for './mandelbrot_seq_noio -0.8 -0.7 0.05 0.15 8192' (10 runs):
+
+          64006.12 msec task-clock:u              #    1.000 CPUs utilized            ( +-  0.03% )
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+                48      page-faults:u             #    0.001 K/sec                    ( +-  1.25% )
+      279941871825      cycles:u                  #    4.374 GHz                      ( +-  0.01% )  (83.33%)
+          64698080      stalled-cycles-frontend:u #    0.02% frontend cycles idle     ( +-  0.27% )  (83.33%)
+      245721240817      stalled-cycles-backend:u  #   87.78% backend cycles idle      ( +-  0.03% )  (83.33%)
+      292772368897      instructions:u            #    1.05  insn per cycle         
+                                                  #    0.84  stalled cycles per insn  ( +-  0.00% )  (83.33%)
+       21782842955      branches:u                #  340.324 M/sec                    ( +-  0.00% )  (83.33%)
+          64549624      branch-misses:u           #    0.30% of all branches          ( +-  0.26% )  (83.33%)
+
+           64.0077 +- 0.0183 seconds time elapsed  ( +-  0.03% )
+
