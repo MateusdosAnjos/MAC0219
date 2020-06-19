@@ -1,0 +1,112 @@
+
+ Performance counter stats for '/mandelbrot_seq_noio -0188 -0012 0554 0754 4096' (15 runs):
+
+         22195.73 msec task-clock                #    1.000 CPUs utilized            ( +-  0.03% )
+               118      context-switches          #    0.005 K/sec                    ( +-  6.81% )
+                 1      cpu-migrations            #    0.000 K/sec                    ( +- 27.82% )
+                52      page-faults               #    0.002 K/sec                    ( +-  0.73% )
+    70679256610      cycles                    #    3.184 GHz                      ( +-  0.01% )
+    83416136397      instructions              #    1.18  insn per cycle           ( +-  0.00% )
+     6204740687      branches                  #  279.547 M/sec                    ( +-  0.00% )
+        16167818      branch-misses             #    0.26% of all branches          ( +-  0.01% )
+
+          22.19692 +- 0.00687 seconds time elapsed  ( +-  0.03% )
+
+
+ Performance counter stats for '/mandelbrot_seq_noio -0188 -0012 0554 0754 4096' (15 runs):
+
+         22353.42 msec task-clock                #    1.000 CPUs utilized            ( +-  0.28% )
+               279      context-switches          #    0.012 K/sec                    ( +- 29.81% )
+                 2      cpu-migrations            #    0.000 K/sec                    ( +- 21.30% )
+                51      page-faults               #    0.002 K/sec                    ( +-  0.59% )
+    70860784630      cycles                    #    3.170 GHz                      ( +-  0.11% )
+    83420639174      instructions              #    1.18  insn per cycle           ( +-  0.00% )
+     6205741870      branches                  #  277.619 M/sec                    ( +-  0.01% )
+        16223458      branch-misses             #    0.26% of all branches          ( +-  0.14% )
+
+           22.3583 +- 0.0643 seconds time elapsed  ( +-  0.29% )
+
+
+ Performance counter stats for '/mandelbrot_seq_noio -0188 -0012 0554 0754 4096' (15 runs):
+
+         22189.19 msec task-clock                #    1.000 CPUs utilized            ( +-  0.02% )
+               127      context-switches          #    0.006 K/sec                    ( +-  4.93% )
+                 2      cpu-migrations            #    0.000 K/sec                    ( +- 16.38% )
+                52      page-faults               #    0.002 K/sec                    ( +-  0.78% )
+    70664393433      cycles                    #    3.185 GHz                      ( +-  0.01% )
+    83415309910      instructions              #    1.18  insn per cycle           ( +-  0.00% )
+     6204568081      branches                  #  279.621 M/sec                    ( +-  0.00% )
+        16165804      branch-misses             #    0.26% of all branches          ( +-  0.01% )
+
+          22.19044 +- 0.00463 seconds time elapsed  ( +-  0.02% )
+
+
+ Performance counter stats for '/mandelbrot_seq_noio -0188 -0012 0554 0754 4096' (15 runs):
+
+         22189.96 msec task-clock                #    1.000 CPUs utilized            ( +-  0.02% )
+               122      context-switches          #    0.005 K/sec                    ( +-  4.35% )
+                 2      cpu-migrations            #    0.000 K/sec                    ( +- 25.73% )
+                52      page-faults               #    0.002 K/sec                    ( +-  0.65% )
+    70665389186      cycles                    #    3.185 GHz                      ( +-  0.01% )
+    83415279440      instructions              #    1.18  insn per cycle           ( +-  0.00% )
+     6204575613      branches                  #  279.612 M/sec                    ( +-  0.00% )
+        16164552      branch-misses             #    0.26% of all branches          ( +-  0.01% )
+
+          22.19092 +- 0.00384 seconds time elapsed  ( +-  0.02% )
+
+
+ Performance counter stats for '/mandelbrot_seq_noio -0188 -0012 0554 0754 4096' (15 runs):
+
+         22195.29 msec task-clock                #    1.000 CPUs utilized            ( +-  0.01% )
+               138      context-switches          #    0.006 K/sec                    ( +-  5.25% )
+                 1      cpu-migrations            #    0.000 K/sec                    ( +- 27.06% )
+                51      page-faults               #    0.002 K/sec                    ( +-  0.61% )
+    70683831378      cycles                    #    3.185 GHz                      ( +-  0.01% )
+    83416835926      instructions              #    1.18  insn per cycle           ( +-  0.00% )
+     6204856851      branches                  #  279.557 M/sec                    ( +-  0.00% )
+        16168605      branch-misses             #    0.26% of all branches          ( +-  0.01% )
+
+          22.19640 +- 0.00298 seconds time elapsed  ( +-  0.01% )
+
+
+ Performance counter stats for '/mandelbrot_seq_noio -0188 -0012 0554 0754 4096' (15 runs):
+
+         22188.78 msec task-clock                #    1.000 CPUs utilized            ( +-  0.02% )
+               132      context-switches          #    0.006 K/sec                    ( +-  7.62% )
+                 2      cpu-migrations            #    0.000 K/sec                    ( +- 25.42% )
+                51      page-faults               #    0.002 K/sec                    ( +-  0.70% )
+    70668684916      cycles                    #    3.185 GHz                      ( +-  0.01% )
+    83415624775      instructions              #    1.18  insn per cycle           ( +-  0.00% )
+     6204639778      branches                  #  279.630 M/sec                    ( +-  0.00% )
+        16169062      branch-misses             #    0.26% of all branches          ( +-  0.01% )
+
+          22.18992 +- 0.00405 seconds time elapsed  ( +-  0.02% )
+
+
+ Performance counter stats for '/mandelbrot_seq_noio -0188 -0012 0554 0754 4096' (15 runs):
+
+         22191.07 msec task-clock                #    1.000 CPUs utilized            ( +-  0.01% )
+               138      context-switches          #    0.006 K/sec                    ( +-  6.56% )
+                 1      cpu-migrations            #    0.000 K/sec                    ( +- 31.62% )
+                52      page-faults               #    0.002 K/sec                    ( +-  0.65% )
+    70680930485      cycles                    #    3.185 GHz                      ( +-  0.01% )
+    83416816369      instructions              #    1.18  insn per cycle           ( +-  0.00% )
+     6204906008      branches                  #  279.613 M/sec                    ( +-  0.00% )
+        16167940      branch-misses             #    0.26% of all branches          ( +-  0.02% )
+
+          22.19306 +- 0.00256 seconds time elapsed  ( +-  0.01% )
+
+
+ Performance counter stats for '/mandelbrot_seq_noio -0188 -0012 0554 0754 4096' (15 runs):
+
+         22195.77 msec task-clock                #    1.000 CPUs utilized            ( +-  0.04% )
+               133      context-switches          #    0.006 K/sec                    ( +-  6.65% )
+                 1      cpu-migrations            #    0.000 K/sec                    ( +- 41.93% )
+                51      page-faults               #    0.002 K/sec                    ( +-  0.61% )
+    70693186138      cycles                    #    3.185 GHz                      ( +-  0.03% )
+    83416247323      instructions              #    1.18  insn per cycle           ( +-  0.00% )
+     6204734489      branches                  #  279.546 M/sec                    ( +-  0.00% )
+        16169905      branch-misses             #    0.26% of all branches          ( +-  0.02% )
+
+          22.19828 +- 0.00899 seconds time elapsed  ( +-  0.04% )
+
