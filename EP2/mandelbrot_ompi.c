@@ -2,10 +2,11 @@
 #include <stdlib.h>
 #include <math.h>
 #include "mpi.h"
+
 #define MASTER 0
 
 int numtasks, taskid, len, dest, offset, i, j, tag1,
-    tag2, source, chunksize, leftover;
+    tag2, tag3, tag4, source, chunksize, leftover;
 char hostname[MPI_MAX_PROCESSOR_NAME];
 MPI_Status status;
 
@@ -51,7 +52,7 @@ int colors[17][3] = {
 void allocate_image_buffer(){
     int rgb_size = 3;
     image_buffer = (unsigned char **) malloc(sizeof(unsigned char *) * image_buffer_size);
-    printf("eu aloquei image buffer no id %d", taskid);
+
     for(int i = 0; i < image_buffer_size; i++){
         image_buffer[i] = (unsigned char *) malloc(sizeof(unsigned char) * rgb_size);
     };
@@ -76,7 +77,7 @@ void init(int argc, char *argv[]){
 
         i_x_max           = image_size;
         i_y_max           = image_size;
-        
+
         image_buffer_size = image_size * image_size;
 
         pixel_width       = (c_x_max - c_x_min) / i_x_max;
@@ -111,7 +112,7 @@ void write_to_file(){
 
     int max_color_component_value = 255;
 
-    file = fopen(filename,"wb");
+    file = fopen(filename, "wb");
 
     fprintf(file, "P6\n %s\n %d\n %d\n %d\n", comment,
             i_x_max, i_y_max, max_color_component_value);
@@ -137,8 +138,6 @@ void update (int myoffset, int chunk, int myid) {
     double c_x;
     double c_y;
 
-    printf("ENTREI EM update ID: %d\n", myid);
-    
     for(i_y = myoffset; i_y < myoffset + chunk; i_y++){
         c_y = c_y_min + i_y * pixel_height;
 
@@ -190,58 +189,79 @@ void compute_mandelbrot(){
     leftover = (i_y_max % numtasks);
     tag1 = 1;
     tag2 = 2;
-
-    printf("ENTREI EM compute_mandelbrot ID: %d\n", taskid);
+    unsigned char *chunk;
 
     if (taskid == MASTER) {
-        printf("numtasks= %d  chunksize= %d  leftover= %d\n", numtasks, chunksize, leftover);
-
-        /* Send each task its portion of the array - master keeps 1st part plus leftover elements */
-        offset = chunksize + leftover;
-        for (dest = 1; dest < numtasks; dest++) {
-            MPI_Send(&offset, 1, MPI_INT, dest, tag1, MPI_COMM_WORLD);
-            MPI_Send(&image_buffer[offset], chunksize, MPI_DOUBLE, dest, tag2, MPI_COMM_WORLD);
-            printf("Sent %d elements to task %d offset= %d\n", chunksize, dest,offset);
-            offset = offset + chunksize;
+        allocate_image_buffer();
+        for (int i = 1; i < numtasks; i++) {
+            MPI_Send(&chunksize, 1, MPI_INT, i, tag1, MPI_COMM_WORLD);
+            // printf("enviei %d para %d\n", chunksize, i);
         }
 
-
-        /* Master does its part of the work */
-        offset = 0;
-        update (offset,  chunksize + leftover, taskid);
-
-        /* Wait to receive results from each task */
-        for (i=1; i < numtasks; i++) {
-            source = i;
-            MPI_Recv(&offset, 1, MPI_INT, source, tag1, MPI_COMM_WORLD, &status);
-            printf("CHEGAMOS AQUI PADRIN!\n");
-            MPI_Recv(&image_buffer[offset], chunksize, MPI_DOUBLE, source, tag2,
-                     MPI_COMM_WORLD, &status);
-            printf("EXECUTEI UMA VEZ");
+        for (int i = 1; i < numtasks; i++) {
+            chunk = (unsigned char*) malloc(3*chunksize*sizeof(unsigned char));
+            MPI_Recv(chunk, 3*chunksize, MPI_UNSIGNED_CHAR, i, tag2, MPI_COMM_WORLD, &status);
+            // printf("recebi de volta de %d\n",i);
+            for (int j = 0; j < 3*chunksize; j += 3) {
+                update_rgb_buffer(chunk[j], chunk[j+1], chunk[j+2]);
+            }
         }
-
-     }
+        write_to_file();
+    }
     if (taskid > MASTER) {
         /* Receive my portion of array from the master task */
         source = MASTER;
-        MPI_Recv(&offset, 1, MPI_INT, source, tag1, MPI_COMM_WORLD, &status);
-        MPI_Recv(&image_buffer[offset], chunksize, MPI_DOUBLE, source, tag2,
-                 MPI_COMM_WORLD, &status);
-        printf("Received %d elements to task %d offset= %d\n", chunksize, taskid, offset);
-        
-        /* Do my part of the work */
-        update(offset, chunksize, taskid);
-        
-        /* Send my results back to the master task */
-        dest = MASTER;
-        MPI_Send(&offset, 1, MPI_INT, dest, tag1, MPI_COMM_WORLD);
-        MPI_Send(&image_buffer[offset], chunksize, MPI_DOUBLE, MASTER, tag2, MPI_COMM_WORLD);
+        MPI_Recv(&chunksize, 1, MPI_INT, source, tag1, MPI_COMM_WORLD, &status);
+        printf("recebi chunksize %d em %d\n", chunksize, taskid);
+        chunk = (unsigned char*) malloc(chunksize * 3 * sizeof(unsigned char));
 
-        /* Use sum reduction operation to obtain final sum */
-        //MPI_Reduce(&image_buffer, offset, 1, MPI_DOUBLE, MPI_SUM, MASTER, MPI_COMM_WORLD);
+        int first_buffer_position = (taskid - 1) * chunksize;
 
-    } /* end of non-master */
 
+        for (int i = 0; i < 3*chunksize; i += 3) {
+            // Define the indices according to current buffer position
+            int buffer_position = first_buffer_position + i;
+            int i_y = buffer_position / i_y_max;
+            int i_x = buffer_position % i_x_max;
+
+            double c_y = c_y_min + i_y * pixel_height;
+            if (fabs(c_y) < pixel_height / 2) {
+                c_y = 0.0;
+            };
+
+            int iteration;
+
+            double c_x = c_x_min + i_x * pixel_width;
+
+            double z_x = 0.0;
+            double z_y = 0.0;
+
+            double z_x_squared = 0.0;
+            double z_y_squared = 0.0;
+
+            double escape_radius_squared = 4;
+
+            for (iteration = 0;
+                iteration < iteration_max &&
+                ((z_x_squared + z_y_squared) < escape_radius_squared);
+                iteration++)
+            {
+                z_y = 2 * z_x * z_y + c_y;
+                z_x = z_x_squared - z_y_squared + c_x;
+
+                z_x_squared = z_x * z_x;
+                z_y_squared = z_y * z_y;
+            };
+
+            chunk[i] = i_x;
+            chunk[i+1] = i_y;
+            chunk[i+2] = iteration;
+        }
+
+        MPI_Send(chunk, 3*chunksize, MPI_UNSIGNED_CHAR, MASTER, tag2, MPI_COMM_WORLD);
+        printf("eu, %d enviei de volta\n", taskid);
+    }
+    MPI_Finalize();
 };
 
 int main(int argc, char *argv[]){
@@ -250,13 +270,10 @@ int main(int argc, char *argv[]){
     MPI_Comm_rank(MPI_COMM_WORLD, &taskid);
 
     init(argc, argv);
-    allocate_image_buffer();
-    
+
     compute_mandelbrot();
 
-    MPI_Finalize();
-
-    //write_to_file();
+    // write_to_file();
 
     return 0;
 };
