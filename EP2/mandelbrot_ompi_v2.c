@@ -58,26 +58,21 @@ void allocate_image_buffer(){
 };
 
 void init(int argc, char *argv[]){
-    // if(argc < 7){
-    //     printf("usage: ./mandelbrot_seq c_x_min c_x_max c_y_min c_y_max image_size\n");
-    //     printf("examples with image_size = 11500:\n");
-    //     printf("    Full Picture:         ./mandelbrot_seq -2.5 1.5 -2.0 2.0 11500\n");
-    //     printf("    Seahorse Valley:      ./mandelbrot_seq -0.8 -0.7 0.05 0.15 11500\n");
-    //     printf("    Elephant Valley:      ./mandelbrot_seq 0.175 0.375 -0.1 0.1 11500\n");
-    //     printf("    Triple Spiral Valley: ./mandelbrot_seq -0.188 -0.012 0.554 0.754 11500\n");
-    //     exit(0);
-    // }
-    // else{
-        // sscanf(argv[2], "%lf", &c_x_min);
-        c_x_min = -2.5;
-        // sscanf(argv[3], "%lf", &c_x_max);
-        c_x_max = 1.5;
-        // sscanf(argv[4], "%lf", &c_y_min);
-        c_y_min = -2.0;
-        // sscanf(argv[5], "%lf", &c_y_max);
-        c_y_max = 2.0;
-        // sscanf(argv[6], "%d", &image_size);
-        image_size = 16;
+    if(argc < 6){
+        printf("usage: ./mandelbrot_seq c_x_min c_x_max c_y_min c_y_max image_size\n");
+        printf("examples with image_size = 11500:\n");
+        printf("    Full Picture:         ./mandelbrot_seq -2.5 1.5 -2.0 2.0 11500\n");
+        printf("    Seahorse Valley:      ./mandelbrot_seq -0.8 -0.7 0.05 0.15 11500\n");
+        printf("    Elephant Valley:      ./mandelbrot_seq 0.175 0.375 -0.1 0.1 11500\n");
+        printf("    Triple Spiral Valley: ./mandelbrot_seq -0.188 -0.012 0.554 0.754 11500\n");
+        exit(0);
+    }
+    else{
+        sscanf(argv[1], "%lf", &c_x_min);
+        sscanf(argv[2], "%lf", &c_x_max);
+        sscanf(argv[3], "%lf", &c_y_min);
+        sscanf(argv[4], "%lf", &c_y_max);
+        sscanf(argv[5], "%d", &image_size);
 
         i_x_max           = image_size;
         i_y_max           = image_size;
@@ -86,18 +81,15 @@ void init(int argc, char *argv[]){
 
         pixel_width       = (c_x_max - c_x_min) / i_x_max;
         pixel_height      = (c_y_max - c_y_min) / i_y_max;
-    // };
+    };
 };
 
 void update_rgb_buffer(int iteration, int x, int y){
     int color;
-    printf("MASTER - image_buffer %d %d %d %d\n", i_y_max, y, x, (i_y_max * y) + x);
-    //printf("entrei na update rgb buffer com o taskid %d\n", taskid);
     if(iteration == iteration_max){
         image_buffer[(i_y_max * y) + x][0] = colors[gradient_size][0];
         image_buffer[(i_y_max * y) + x][1] = colors[gradient_size][1];
         image_buffer[(i_y_max * y) + x][2] = colors[gradient_size][2];
-        // printf("%d %d %d", colors[gradient_size][0], colors[gradient_size][1], colors[gradient_size][2]);
     }
     else{
         color = iteration % gradient_size;
@@ -105,7 +97,6 @@ void update_rgb_buffer(int iteration, int x, int y){
         image_buffer[(i_y_max * y) + x][0] = colors[color][0];
         image_buffer[(i_y_max * y) + x][1] = colors[color][1];
         image_buffer[(i_y_max * y) + x][2] = colors[color][2];
-        // printf("%d %d %d", colors[color][0], colors[color][1], colors[color][2]);
 
     };
 
@@ -130,8 +121,7 @@ void write_to_file(){
     fclose(file);
 };
 
-
-void compute_mandelbrot(){
+void update(int chunksize, int *chunk, int offset) {
     double z_x;
     double z_y;
     double z_x_squared;
@@ -145,8 +135,52 @@ void compute_mandelbrot(){
     double c_x;
     double c_y;
 
-    chunksize = (i_y_max / (numtasks - 1)); // nao tem que ser numtasks - 1 (por causa da mestre?)
-    leftover = (i_y_max % (numtasks - 1)); // se a afirmacao acima for verdadeira, entao reflete aqui tb
+    for (int i = 0; i < chunksize; i++) {
+        i_y = offset + i;
+
+        double c_y = c_y_min + i_y * pixel_height;
+
+        if (fabs(c_y) < pixel_height / 2) {
+            c_y = 0.0;
+        };
+
+        for (i_x = 0; i_x < image_size; i_x++) {
+            double c_x = c_x_min + i_x * pixel_width;
+
+            double z_x = 0.0;
+            double z_y = 0.0;
+
+            double z_x_squared = 0.0;
+            double z_y_squared = 0.0;
+
+            double escape_radius_squared = 4;
+
+            for (iteration = 0;
+                iteration < iteration_max &&
+                ((z_x_squared + z_y_squared) < escape_radius_squared);
+                iteration++)
+            {
+                z_y = 2 * z_x * z_y + c_y;
+                z_x = z_x_squared - z_y_squared + c_x;
+
+                z_x_squared = z_x * z_x;
+                z_y_squared = z_y * z_y;
+            };
+
+            chunk[j] = iteration;
+            chunk[j+1] = i_x;
+            chunk[j+2] = i_y;
+
+            j += 3;
+        }
+    }
+
+}
+
+void compute_mandelbrot(){
+    chunksize = (int) (i_y_max / (numtasks - 1)); // nao tem que ser numtasks - 1 (por causa da mestre?)
+    leftover = (int) (i_y_max % (numtasks - 1)); // se a afirmacao acima for verdadeira, entao reflete aqui tb
+    
     tag1 = 1;
     tag2 = 2;
     int *chunk;
@@ -156,22 +190,23 @@ void compute_mandelbrot(){
 
         for (int i = 1; i < numtasks; i++) {
             MPI_Send(&chunksize, 1, MPI_INT, i, tag1, MPI_COMM_WORLD);
-            // printf("enviei %d para %d\n", chunksize, i);
         }
 
-        printf("MASTER - malloc do chunk\n");
+        chunk = (int *) malloc(3 * leftover * image_size * sizeof(int));
+
+        update(leftover, chunk, chunksize * (numtasks-1));
+    
+        for (int j = 0; (j+2) < leftover * image_size * 3; j += 3) {
+            update_rgb_buffer(chunk[j], chunk[j+1], chunk[j+2]);
+        }
+
         for (int i = 1; i < numtasks; i++) {
-            printf("MASTER - recebi de volta do ESCRAVO[%d]\n",i);
-            printf("MASTER - chunksize = %d image_size = %d\n", chunksize, image_size);
-            fflush(stdout);
             chunk = (int *) malloc(3 * chunksize * image_size * sizeof(int));
             MPI_Recv(chunk, 3 * chunksize * image_size * sizeof(int), MPI_INT, i, tag2, MPI_COMM_WORLD, &status);
 
             for (int j = 0; (j+2) < chunksize * image_size * 3; j += 3) {
-                printf("MASTER - %d %d %d\n", chunk[j], chunk[j+1], chunk[j+2]);
                 update_rgb_buffer(chunk[j], chunk[j+1], chunk[j+2]);
             }
-            printf("MASTER - consegui sair do for\n");
         }
 
         write_to_file();
@@ -181,59 +216,14 @@ void compute_mandelbrot(){
         source = MASTER;
         int i_x;
         MPI_Recv(&chunksize, 1, MPI_INT, source, tag1, MPI_COMM_WORLD, &status);
-        printf("ESCRAVO[%d] - recebi chunksize de tamanho=%d\n", taskid, chunksize);
         
         chunk = (int *) malloc(chunksize * image_size * 3 * sizeof(int));
 
         int iteration;
         int j = 0;
 
-        for (int i = 0; i < chunksize; i++) {
-            // Define the indices according to current buffer position
-            i_y = chunksize * (taskid - 1) + i;
-
-            double c_y = c_y_min + i_y * pixel_height;
-
-            if (fabs(c_y) < pixel_height / 2) {
-                c_y = 0.0;
-            };
-
-            for (i_x = 0; i_x < image_size; i_x++) {
-                double c_x = c_x_min + i_x * pixel_width;
-
-                double z_x = 0.0;
-                double z_y = 0.0;
-
-                double z_x_squared = 0.0;
-                double z_y_squared = 0.0;
-
-                double escape_radius_squared = 4;
-
-                for (iteration = 0;
-                    iteration < iteration_max &&
-                    ((z_x_squared + z_y_squared) < escape_radius_squared);
-                    iteration++)
-                {
-                    z_y = 2 * z_x * z_y + c_y;
-                    z_x = z_x_squared - z_y_squared + c_x;
-
-                    z_x_squared = z_x * z_x;
-                    z_y_squared = z_y * z_y;
-                };
-
-                // desenvolver formula para alocar 
-                chunk[j] = iteration;
-                chunk[j+1] = i_x;
-                chunk[j+2] = i_y;
-
-                j += 3;
-            }
-        }
-
+        update(chunksize, chunk, chunksize * (taskid - 1));
         MPI_Send(chunk, 3 * image_size * chunksize, MPI_INT, MASTER, tag2, MPI_COMM_WORLD);
-        // free(chunk);
-        printf("ESCRAVO[%d] - enviei de volta\n", taskid);
-        fflush(stdout);
     }
     MPI_Finalize();
 };
@@ -246,8 +236,6 @@ int main(int argc, char *argv[]){
     init(argc, argv);
 
     compute_mandelbrot();
-
-    // write_to_file();
 
     return 0;
 };
