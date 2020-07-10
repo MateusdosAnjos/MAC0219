@@ -1,0 +1,187 @@
+
+ Performance counter stats for './mandelbrot_cuda 0.175 0.375 -0.1 0.1 4096' (15 runs):
+
+           1158.87 msec task-clock:u              #    0.852 CPUs utilized            ( +-  0.37% )
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+             29683      page-faults:u             #    0.026 M/sec                    ( +-  0.00% )
+        3475521819      cycles:u                  #    2.999 GHz                      ( +-  0.48% )  (83.24%)
+           8517084      stalled-cycles-frontend:u #    0.25% frontend cycles idle     ( +-  5.18% )  (83.33%)
+        1042976688      stalled-cycles-backend:u  #   30.01% backend cycles idle      ( +-  6.20% )  (83.35%)
+       10074814893      instructions:u            #    2.90  insn per cycle         
+                                                  #    0.10  stalled cycles per insn  ( +-  0.14% )  (83.36%)
+        2208573324      branches:u                # 1905.802 M/sec                    ( +-  0.18% )  (83.36%)
+            283616      branch-misses:u           #    0.01% of all branches          ( +-  3.50% )  (83.36%)
+
+            1.3596 +- 0.0227 seconds time elapsed  ( +-  1.67% )
+
+
+ Performance counter stats for './mandelbrot_cuda 0.175 0.375 -0.1 0.1 16' (10 runs):
+
+            291.11 msec task-clock:u              #    0.808 CPUs utilized            ( +-  0.83% )
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+              5107      page-faults:u             #    0.018 M/sec                    ( +-  0.02% )
+          55654635      cycles:u                  #    0.191 GHz                      ( +-  4.72% )  (83.04%)
+           2837938      stalled-cycles-frontend:u #    5.10% frontend cycles idle     ( +-  4.28% )  (83.22%)
+          16608363      stalled-cycles-backend:u  #   29.84% backend cycles idle      ( +-  4.99% )  (83.55%)
+          82696827      instructions:u            #    1.49  insn per cycle         
+                                                  #    0.20  stalled cycles per insn  ( +-  7.73% )  (83.80%)
+          17797275      branches:u                #   61.135 M/sec                    ( +-  9.32% )  (83.37%)
+            191621      branch-misses:u           #    1.08% of all branches          ( +-  3.23% )  (83.02%)
+
+           0.36010 +- 0.00629 seconds time elapsed  ( +-  1.75% )
+
+
+ Performance counter stats for './mandelbrot_cuda 0.175 0.375 -0.1 0.1 32' (10 runs):
+
+            286.02 msec task-clock:u              #    0.784 CPUs utilized            ( +-  1.47% )
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+              5104      page-faults:u             #    0.018 M/sec                    ( +-  0.02% )
+          53184084      cycles:u                  #    0.186 GHz                      ( +-  6.39% )  (83.20%)
+           3074141      stalled-cycles-frontend:u #    5.78% frontend cycles idle     ( +-  4.31% )  (83.11%)
+          15310999      stalled-cycles-backend:u  #   28.79% backend cycles idle      ( +-  3.90% )  (83.18%)
+          82904802      instructions:u            #    1.56  insn per cycle         
+                                                  #    0.18  stalled cycles per insn  ( +-  4.36% )  (83.06%)
+          17263478      branches:u                #   60.357 M/sec                    ( +-  9.39% )  (83.92%)
+            186002      branch-misses:u           #    1.08% of all branches          ( +-  4.00% )  (83.53%)
+
+           0.36463 +- 0.00713 seconds time elapsed  ( +-  1.95% )
+
+
+ Performance counter stats for './mandelbrot_cuda 0.175 0.375 -0.1 0.1 64' (10 runs):
+
+            288.16 msec task-clock:u              #    0.831 CPUs utilized            ( +-  0.70% )
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+              5109      page-faults:u             #    0.018 M/sec                    ( +-  0.01% )
+          51230440      cycles:u                  #    0.178 GHz                      ( +-  3.73% )  (82.86%)
+           2772200      stalled-cycles-frontend:u #    5.41% frontend cycles idle     ( +-  4.91% )  (82.89%)
+          15554629      stalled-cycles-backend:u  #   30.36% backend cycles idle      ( +-  4.48% )  (83.56%)
+          76654100      instructions:u            #    1.50  insn per cycle         
+                                                  #    0.20  stalled cycles per insn  ( +-  6.47% )  (83.48%)
+          16539625      branches:u                #   57.398 M/sec                    ( +-  6.74% )  (83.85%)
+            194122      branch-misses:u           #    1.17% of all branches          ( +-  4.93% )  (83.36%)
+
+           0.34664 +- 0.00392 seconds time elapsed  ( +-  1.13% )
+
+
+ Performance counter stats for './mandelbrot_cuda 0.175 0.375 -0.1 0.1 128' (10 runs):
+
+            287.53 msec task-clock:u              #    0.808 CPUs utilized            ( +-  0.89% )
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+              5126      page-faults:u             #    0.018 M/sec                    ( +-  0.02% )
+          50047443      cycles:u                  #    0.174 GHz                      ( +-  5.52% )  (82.85%)
+           2642050      stalled-cycles-frontend:u #    5.28% frontend cycles idle     ( +-  7.40% )  (82.89%)
+          16760512      stalled-cycles-backend:u  #   33.49% backend cycles idle      ( +-  3.85% )  (83.64%)
+          91964380      instructions:u            #    1.84  insn per cycle         
+                                                  #    0.18  stalled cycles per insn  ( +-  3.12% )  (83.62%)
+          18521001      branches:u                #   64.414 M/sec                    ( +-  5.15% )  (83.60%)
+            167162      branch-misses:u           #    0.90% of all branches          ( +-  6.29% )  (83.41%)
+
+           0.35595 +- 0.00635 seconds time elapsed  ( +-  1.79% )
+
+
+ Performance counter stats for './mandelbrot_cuda 0.175 0.375 -0.1 0.1 256' (10 runs):
+
+            302.56 msec task-clock:u              #    0.831 CPUs utilized            ( +-  1.16% )
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+              5201      page-faults:u             #    0.017 M/sec                    ( +-  0.01% )
+          65660758      cycles:u                  #    0.217 GHz                      ( +-  3.83% )  (82.93%)
+           2758170      stalled-cycles-frontend:u #    4.20% frontend cycles idle     ( +-  5.29% )  (83.06%)
+          20936841      stalled-cycles-backend:u  #   31.89% backend cycles idle      ( +-  4.01% )  (83.25%)
+         126971135      instructions:u            #    1.93  insn per cycle         
+                                                  #    0.16  stalled cycles per insn  ( +-  3.38% )  (83.59%)
+          25127089      branches:u                #   83.048 M/sec                    ( +-  9.20% )  (83.72%)
+            197221      branch-misses:u           #    0.78% of all branches          ( +-  3.39% )  (83.45%)
+
+           0.36416 +- 0.00841 seconds time elapsed  ( +-  2.31% )
+
+
+ Performance counter stats for './mandelbrot_cuda 0.175 0.375 -0.1 0.1 512' (10 runs):
+
+            310.96 msec task-clock:u              #    0.831 CPUs utilized            ( +-  2.46% )
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+              5489      page-faults:u             #    0.018 M/sec                    ( +-  0.01% )
+         111530974      cycles:u                  #    0.359 GHz                      ( +-  5.21% )  (82.95%)
+           2639917      stalled-cycles-frontend:u #    2.37% frontend cycles idle     ( +-  2.38% )  (82.78%)
+          29920250      stalled-cycles-backend:u  #   26.83% backend cycles idle      ( +-  4.19% )  (83.43%)
+         222922263      instructions:u            #    2.00  insn per cycle         
+                                                  #    0.13  stalled cycles per insn  ( +-  2.83% )  (83.82%)
+          50984084      branches:u                #  163.957 M/sec                    ( +-  3.56% )  (83.83%)
+            188783      branch-misses:u           #    0.37% of all branches          ( +-  3.49% )  (83.20%)
+
+           0.37430 +- 0.00824 seconds time elapsed  ( +-  2.20% )
+
+
+ Performance counter stats for './mandelbrot_cuda 0.175 0.375 -0.1 0.1 1024' (10 runs):
+
+            347.59 msec task-clock:u              #    0.816 CPUs utilized            ( +-  0.84% )
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+              6643      page-faults:u             #    0.019 M/sec                    ( +-  0.02% )
+         289586566      cycles:u                  #    0.833 GHz                      ( +-  1.21% )  (83.05%)
+           3984403      stalled-cycles-frontend:u #    1.38% frontend cycles idle     ( +-  5.03% )  (83.03%)
+          73603419      stalled-cycles-backend:u  #   25.42% backend cycles idle      ( +-  7.38% )  (83.52%)
+         714841436      instructions:u            #    2.47  insn per cycle         
+                                                  #    0.10  stalled cycles per insn  ( +-  1.57% )  (83.41%)
+         160514646      branches:u                #  461.794 M/sec                    ( +-  1.02% )  (83.72%)
+            202530      branch-misses:u           #    0.13% of all branches          ( +-  2.89% )  (83.29%)
+
+           0.42597 +- 0.00980 seconds time elapsed  ( +-  2.30% )
+
+
+ Performance counter stats for './mandelbrot_cuda 0.175 0.375 -0.1 0.1 2048' (10 runs):
+
+            514.38 msec task-clock:u              #    0.865 CPUs utilized            ( +-  0.86% )
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+             11251      page-faults:u             #    0.022 M/sec                    ( +-  0.01% )
+         935501489      cycles:u                  #    1.819 GHz                      ( +-  1.05% )  (82.97%)
+           4742164      stalled-cycles-frontend:u #    0.51% frontend cycles idle     ( +-  9.31% )  (83.33%)
+         262496478      stalled-cycles-backend:u  #   28.06% backend cycles idle      ( +-  5.19% )  (83.20%)
+        2605587489      instructions:u            #    2.79  insn per cycle         
+                                                  #    0.10  stalled cycles per insn  ( +-  0.56% )  (83.51%)
+         572977458      branches:u                # 1113.923 M/sec                    ( +-  0.64% )  (83.54%)
+            224323      branch-misses:u           #    0.04% of all branches          ( +-  2.47% )  (83.45%)
+
+           0.59472 +- 0.00694 seconds time elapsed  ( +-  1.17% )
+
+
+ Performance counter stats for './mandelbrot_cuda 0.175 0.375 -0.1 0.1 4096' (10 runs):
+
+           1196.65 msec task-clock:u              #    0.896 CPUs utilized            ( +-  0.64% )
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+             29682      page-faults:u             #    0.025 M/sec                    ( +-  0.00% )
+        3590791210      cycles:u                  #    3.001 GHz                      ( +-  0.78% )  (83.23%)
+           8949144      stalled-cycles-frontend:u #    0.25% frontend cycles idle     ( +-  7.96% )  (83.35%)
+         958898308      stalled-cycles-backend:u  #   26.70% backend cycles idle      ( +-  9.44% )  (83.33%)
+       10130961087      instructions:u            #    2.82  insn per cycle         
+                                                  #    0.09  stalled cycles per insn  ( +-  0.50% )  (83.41%)
+        2220910873      branches:u                # 1855.946 M/sec                    ( +-  0.55% )  (83.45%)
+            316284      branch-misses:u           #    0.01% of all branches          ( +-  2.61% )  (83.23%)
+
+            1.3355 +- 0.0131 seconds time elapsed  ( +-  0.98% )
+
+
+ Performance counter stats for './mandelbrot_cuda 0.175 0.375 -0.1 0.1 8192' (10 runs):
+
+           3825.62 msec task-clock:u              #    0.980 CPUs utilized            ( +-  1.08% )
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+            103411      page-faults:u             #    0.027 M/sec                    ( +-  0.00% )
+       13954386579      cycles:u                  #    3.648 GHz                      ( +-  1.21% )  (83.32%)
+          20621788      stalled-cycles-frontend:u #    0.15% frontend cycles idle     ( +- 10.29% )  (83.32%)
+        3668900486      stalled-cycles-backend:u  #   26.29% backend cycles idle      ( +- 12.21% )  (83.34%)
+       40301061377      instructions:u            #    2.89  insn per cycle         
+                                                  #    0.09  stalled cycles per insn  ( +-  0.10% )  (83.39%)
+        8846482755      branches:u                # 2312.430 M/sec                    ( +-  0.11% )  (83.32%)
+            600057      branch-misses:u           #    0.01% of all branches          ( +-  1.81% )  (83.31%)
+
+            3.9055 +- 0.0449 seconds time elapsed  ( +-  1.15% )
+
